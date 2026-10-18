@@ -85,10 +85,10 @@
 
 <header class="hero">
   <h1>知产刀客 · 知识产权全链路维权技能包</h1>
-  <p class="sub">一套覆盖 <b>知识产权维权全链路</b> 的 Agent Skill 集合：从确权核查、侵权发现、侵权比对、证据固定，到平台投诉、行政保护、民事诉讼、刑事维权、判决执行，再到跨境维权。共 <b>10 个技能</b>，可被主流 AI Agent 平台作为 Skill 直接安装使用。</p>
+  <p class="sub">一套覆盖 <b>知识产权维权全链路</b> 的 Agent Skill 集合：从确权核查、侵权发现、侵权研判、证据固定，到平台投诉、行政保护、民事诉讼、刑事维权、判决执行，再到跨境维权。共 <b>12 个技能</b>，可被主流 AI Agent 平台作为 Skill 直接安装使用。</p>
   <div class="badges">
     <span class="badge">作者 <b>知产刀客SamjoeYang</b></span>
-    <span class="badge">状态 <b>10/10 已校验</b></span>
+    <span class="badge">状态 <b>12/12 已校验</b></span>
     <span class="badge">结构 <b>skills + docs + README</b></span>
   </div>
 </header>
@@ -112,7 +112,7 @@
     <blockquote>本技能包提供知识产权维权的方法论与流程指引，<b>不构成正式法律意见</b>；个案请结合专业律师意见使用。</blockquote>
     <ul>
       <li><b>作者</b>：知产刀客SamjoeYang</li>
-      <li><b>状态</b>：10/10 技能已通过官方校验（<code>quick_validate.py</code>）</li>
+      <li><b>状态</b>：12/12 技能已通过官方校验（<code>quick_validate.py</code>）</li>
       <li><b>仓库结构</b>：<code>skills/</code>（技能本体）+ <code>docs/</code>（总览文档）+ <code>README.md</code>（说明与安装指引）</li>
     </ul>
   </section>
@@ -125,14 +125,16 @@
       <tbody>
         <tr><td>1</td><td><code>ip-rights-audit</code></td><td>S0 确权与监测</td><td>权利有效性核查、权利清单、海关备案、监测体系</td><td>references ×2</td></tr>
         <tr><td>2</td><td><code>ip-infringement-discovery</code></td><td>S1 侵权发现</td><td>多渠道线索收集、主体链锁定、线索分级</td><td>references ×1</td></tr>
-        <tr><td>3</td><td><code>ip-infringement-analysis</code></td><td>S2 侵权比对</td><td>专利/商标/著作权/商业秘密比对、抗辩预判、胜诉评估</td><td>references ×4</td></tr>
-        <tr><td>4</td><td><code>ip-evidence-collection</code></td><td>S3 证据固定</td><td>取证选型、公证/存证/保全、证据链、证据清单</td><td>references ×1 + scripts ×1</td></tr>
-        <tr><td>5</td><td><code>ip-platform-complaint</code></td><td>S4 平台投诉</td><td>淘天/京东/拼多多/抖音通知-删除、申诉应对</td><td>references ×1 + assets ×1</td></tr>
-        <tr><td>6</td><td><code>ip-administrative-action</code></td><td>S5 行政保护</td><td>专利行政裁决、商标/著作权查处、海关扣留</td><td>references ×2</td></tr>
-        <tr><td>7</td><td><code>ip-civil-litigation</code></td><td>S6 民事诉讼</td><td>管辖、保全/禁令、赔偿计算、起诉</td><td>references ×1 + scripts ×1 + assets ×1</td></tr>
-        <tr><td>8</td><td><code>ip-criminal-enforcement</code></td><td>S7 刑事维权</td><td>罪名识别、立案标准、报案/自诉、刑民衔接</td><td>references ×1</td></tr>
-        <tr><td>9</td><td><code>ip-judgment-execution</code></td><td>S8 执行监测</td><td>执行申请、强制措施、拒不执行应对、复发监测</td><td>references ×1</td></tr>
-        <tr><td>10</td><td><code>ip-cross-border-enforcement</code></td><td>跨境贯穿</td><td>境外平台投诉、ITC 337、海外诉讼、出口海关、权利布局</td><td>references ×2</td></tr>
+        <tr><td>3</td><td><code>ip-infringement-screening</code></td><td>S1–S2 侵权研判</td><td>批量线索研判：侵权类型/近似度/证据强度，输出 P0–P3 风险分级与处置建议，可回填维权台账</td><td>references ×3 + templates ×1</td></tr>
+        <tr><td>4</td><td><code>ip-infringement-analysis</code></td><td>S2 侵权比对</td><td>专利/商标/著作权/商业秘密比对、抗辩预判、胜诉评估</td><td>references ×4</td></tr>
+        <tr><td>5</td><td><code>ip-evidence-collection</code></td><td>S3 证据固定</td><td>取证选型、公证/存证/保全、证据链与证据目录（含可选 <code>evidence_inventory.py</code> 批量生成清单）</td><td>references ×1 + templates ×1 + scripts ×1</td></tr>
+        <tr><td>6</td><td><code>ip-complaint-playbook</code></td><td>S4 平台投诉方案</td><td>投诉通道选择、案由、材料清单、侵权对比说明、提交节奏、驳回补救与申诉应对</td><td>references ×2 + templates ×1</td></tr>
+        <tr><td>7</td><td><code>ip-platform-complaint</code></td><td>S4 平台投诉执行</td><td>淘天/京东/拼多多/抖音通知-删除、申诉应对</td><td>references ×1 + assets ×1</td></tr>
+        <tr><td>8</td><td><code>ip-administrative-action</code></td><td>S5 行政保护</td><td>专利行政裁决、商标/著作权查处、海关扣留</td><td>references ×2</td></tr>
+        <tr><td>9</td><td><code>ip-civil-litigation</code></td><td>S6 民事诉讼</td><td>管辖、保全/禁令、赔偿计算、起诉</td><td>references ×1 + scripts ×1 + assets ×1</td></tr>
+        <tr><td>10</td><td><code>ip-criminal-enforcement</code></td><td>S7 刑事维权</td><td>罪名识别、立案标准、报案/自诉、刑民衔接</td><td>references ×1</td></tr>
+        <tr><td>11</td><td><code>ip-judgment-execution</code></td><td>S8 执行监测</td><td>执行申请、强制措施、拒不执行应对、复发监测</td><td>references ×1</td></tr>
+        <tr><td>12</td><td><code>ip-cross-border-enforcement</code></td><td>跨境贯穿</td><td>境外平台投诉、ITC 337、海外诉讼、出口海关、权利布局</td><td>references ×2</td></tr>
       </tbody>
     </table>
     </div>
@@ -165,6 +167,24 @@
       <div class="arrow">↓</div>
       <div class="chain">
         <div class="node"><b>S8 执行</b><span>→ 复发监测 → 回到 S0 / S1</span></div>
+      </div>
+    </div>
+    <h3>平台投诉专项子链路（S1→S4 的细化）</h3>
+    <div class="flow">
+      <div class="chain">
+        <div class="node" style="background:#fff7e9;border-color:#ecd9a6"><b>S1 发现线索</b><span>ip-infringement-discovery</span></div>
+        <div class="arrow">→</div>
+        <div class="node" style="background:#fff7e9;border-color:#ecd9a6"><b>S1–S2 研判分级</b><span>ip-infringement-screening（P0–P3）</span></div>
+        <div class="arrow">→</div>
+        <div class="node" style="background:#fff7e9;border-color:#ecd9a6"><b>S3 取证固证</b><span>ip-evidence-collection</span></div>
+        <div class="arrow">→</div>
+        <div class="node" style="background:#fff7e9;border-color:#ecd9a6"><b>S4 投诉方案</b><span>ip-complaint-playbook</span></div>
+        <div class="arrow">→</div>
+        <div class="node" style="background:#fff7e9;border-color:#ecd9a6"><b>S4 执行下架</b><span>ip-platform-complaint + 申诉应对</span></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="chain">
+        <div class="node"><b>失败 / 争议升级</b><span>→ S5 行政 / S6 民事 / S7 刑事</span></div>
       </div>
     </div>
   </section>
@@ -230,7 +250,9 @@ cp -r skills/ip-civil-litigation ~/.claude/skills/</pre>
       <thead><tr><th>用户提问</th><th>触发技能</th></tr></thead>
       <tbody>
         <tr><td>"帮我查一下我的专利有没有被侵权"</td><td><code>ip-infringement-discovery</code> + <code>ip-infringement-analysis</code></td></tr>
+        <tr><td>"这批链接要不要投诉？帮我研判分级（P0–P3）"</td><td><code>ip-infringement-screening</code></td></tr>
         <tr><td>"淘宝上有人卖假货，帮我投诉下架"</td><td><code>ip-platform-complaint</code></td></tr>
+        <tr><td>"帮我出一份平台投诉方案（通道/案由/对比说明/提交节奏）"</td><td><code>ip-complaint-playbook</code></td></tr>
         <tr><td>"侵权人很恶劣，能告他吗？能赔多少？"</td><td><code>ip-civil-litigation</code>（<code>damages_calculator.py</code> 计算赔偿）</td></tr>
         <tr><td>"货物出口被海关扣了怎么办 / 亚马逊上有仿冒怎么投诉"</td><td><code>ip-cross-border-enforcement</code></td></tr>
         <tr><td>"帮我盘点下我的知识产权资产 / 要维权先确权"</td><td><code>ip-rights-audit</code></td></tr>
@@ -245,7 +267,7 @@ cp -r skills/ip-civil-litigation ~/.claude/skills/</pre>
   <section id="verified">
     <h2>六、已验证内容</h2>
     <ul>
-      <li>10 个 <code>SKILL.md</code> 全部通过 <code>quick_validate.py</code>（frontmatter / 命名 / 结构校验）；</li>
+      <li>12 个 <code>SKILL.md</code> 全部通过 <code>quick_validate.py</code>（frontmatter / 命名 / 结构校验）；</li>
       <li><code>evidence_inventory.py</code>：正常生成证据清单 + 非法输入拦截；</li>
       <li><code>damages_calculator.py</code>：赔偿计算正确 + 非法参数校验；惩罚性赔偿默认不主张，主张时单列"主张项（非必得）"并输出风险提示；</li>
       <li><code>litigation-guide.md</code>：含惩罚性赔偿主张要点（慎用）与合理开支主张要点（律师费酌减风险、按 50%~100% 支持率测算）；</li>
