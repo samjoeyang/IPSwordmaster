@@ -28,13 +28,13 @@ agent_created: true
    - 已做海关备案的（S0/S5）→ 海关依职权中止放行 → 3 个工作日内申请扣留+担保。
    - 未备案 → 向进出境地海关申请依申请扣留。
    - 出口方权利人的注意点：**定牌加工（OEM/ODM）出口**可能被目的国权利人主张侵权，出口前做目的国权属与风险排查（商标/专利/外观）。
-3. **境外平台投诉**：按 `references/overseas-platforms.md` 对 Amazon、eBay、AliExpress、TikTok Shop、Wish、Shopify 等平台投诉：
+3. **境外平台投诉**：按 `overseas-platforms.md` 对 Amazon、eBay、AliExpress、TikTok Shop、Wish、Shopify 等平台投诉：
    - Amazon：**Brand Registry 品牌注册**后可提交侵权报告（Report a Violation），配合 Test Buy 购买取证；未注册品牌走普通投诉。
    - eBay：VeRO（Verified Rights Owner）计划，提交产权证明+侵权 listing 链接。
    - AliExpress/全球速卖通：知产投诉系统（身份+权属+链接+初步证据）。
    - TikTok Shop：商家/达人对品牌侵权的举报入口。
    - 各平台流程共性：身份验证、权利证明、侵权链接、初步证据、申诉-反通知。
-4. **境外行政与司法救济**：按 `references/overseas-litigation.md` 选择：
+4. **境外行政与司法救济**：按 `overseas-litigation.md` 选择：
    - **美国 ITC 337 调查**：对进口至美国的侵权产品（专利、商标、版权、商业秘密），向美国国际贸易委员会（ITC）申请 337 调查，可获排除令（海关禁止入境），速度快、威慑强。
    - 海外民事诉讼：美国联邦法院专利/商标/版权诉讼（可主张三倍赔偿、律师费）、欧盟/东南亚等当地法院诉讼。
    - 海关行政保护：美国海关 CBP 扣押、欧盟海关行动等。
@@ -53,8 +53,8 @@ agent_created: true
 
 ## Resources
 
-- `references/overseas-platforms.md`：主要境外电商平台投诉机制。
-- `references/overseas-litigation.md`：ITC 337、海外诉讼、海关与域名争议要点。
+- `overseas-platforms.md`：主要境外电商平台投诉机制。
+- `overseas-litigation.md`：ITC 337、海外诉讼、海关与域名争议要点。
 
 ## 作者
 

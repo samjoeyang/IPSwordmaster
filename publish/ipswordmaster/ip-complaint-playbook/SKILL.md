@@ -64,7 +64,7 @@ agent_created: true
 逐条过表，任何一条不通过就停下来，明确告诉用户缺什么、去哪补。
 
 ### 第 2 步：确定投诉通道
-按平台查 `references/platform-complaint-rules.md`。
+按平台查 `platform-complaint-rules.md`。
 
 要点：
 - 阿里系（淘宝/天猫/1688/闲鱼）统一走**阿里巴巴知识产权保护平台（IPP）**，一次认证覆盖多站
@@ -124,7 +124,7 @@ agent_created: true
 
 ## 驳回后的补救
 
-查 `references/rejection-reasons-and-remedies.md` 定位原因。核心原则：
+查 `rejection-reasons-and-remedies.md` 定位原因。核心原则：
 
 - **材料性问题**（权属过期、授权断链、材料不清）→ 补齐后重新提交，**这是最容易救的**
 - **认定性问题**（不构成近似、描述性使用、权利用尽）→ 不要硬投第二次，改走发函或诉讼
@@ -151,7 +151,7 @@ agent_created: true
 
 ## 输出规范
 
-1. 输出一份**投诉方案书**，格式见 `templates/complaint-plan-template.md`
+1. 输出一份**投诉方案书**，格式见 `complaint-plan-template.md`
 2. 目标清单逐条编号，编号规则沿用研判阶段的线索编号（如 `TB-001`）
 3. 每条必须给出：平台 / 通道 / 案由 / 材料清单 / 对比说明草稿 / 预期通过可能性 / 备选路径
 4. 材料清单用勾选框，缺项的明确标注「待补：XXX」

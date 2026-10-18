@@ -25,8 +25,8 @@ agent_created: true
    - 知识产权权利证明（商标注册证/专利证书及年费凭证/著作权登记或底稿）。
    - 涉嫌侵权商品/服务信息（商品链接、店铺名称、截图）。
    - 初步侵权证据（比对说明、实物照片、公证书/存证）。
-   模板见 `assets/complaint-materials.md`。
-3. **按平台提交**：按 `references/platform-guides.md` 的流程操作：
+   模板见 `complaint-materials.md`。
+3. **按平台提交**：按 `platform-guides.md` 的流程操作：
    - 淘天：注册 IPP 平台 → 身份与权属验证 → 发起投诉（选站点、选权利类型、填链接）→ 提交后平台审核。
    - 京东：京东知识产权维权平台，首次投诉需备份权属信息。
    - 拼多多：知产保护平台，创建投诉账号 → 上传身份+权属材料 → 提供侵权信息 → 平台处理反馈。
@@ -40,13 +40,13 @@ agent_created: true
 ## Output Standards
 
 - 通知材料必须四要素齐备，缺要素时明确提示补齐后再提交。
-- 每平台流程按 `references/platform-guides.md` 指引执行，不编造平台规则。
+- 每平台流程按 `platform-guides.md` 指引执行，不编造平台规则。
 - 投诉全过程留痕（提交时间、单号、平台反馈），用于后续升级维权。
 
 ## Resources
 
-- `references/platform-guides.md`：淘天/京东/拼多多等平台投诉流程要点与时限。
-- `assets/complaint-materials.md`：合格通知/投诉材料模板。
+- `platform-guides.md`：淘天/京东/拼多多等平台投诉流程要点与时限。
+- `complaint-materials.md`：合格通知/投诉材料模板。
 
 ## 作者
 

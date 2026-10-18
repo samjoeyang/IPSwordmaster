@@ -1,16 +1,35 @@
 #!/usr/bin/env bash
-# 构建 SkillHub 上架包 dist/ipswordmaster.zip，一次性满足平台全部结构约束：
-#   1) 展平子技能内的 references/ templates/ scripts/ assets/ 子目录 → 最多两级目录
-#   2) 中文文件名改为 ASCII → 消除 zip 文件名编码问题（否则平台解析不到引用）
-#   3) 从 publish/ipswordmaster 内部打包 → zip 根目录即技能根目录（含 SKILL.md）
-#   4) 排除图片（*.png 等）与 assets/ → 图片外部托管，包体 < 3M
-# 全部步骤幂等，可反复执行。
+# 构建 SkillHub 上架包，一次性满足平台全部结构约束。
+# 产出：
+#   dist/ipswordmaster.zip        —— 聚合包（12 合 1）
+#   dist/ip-platform-complaint.zip —— 平台投诉单技能包
+#
+# 流水线（全部幂等，可反复执行）：
+#   1) flatten_package.py      展平子技能内的 references/ templates/ scripts/ assets/ → 最多两级目录
+#   2) normalize_filenames.py  中文文件名改 ASCII，并同步引用
+#   3) fix_stale_paths.py      修正展平后残留的失效路径（`references/x.md` → `x.md`）
+#   4) zip_package.py          Python zipfile 打包 + 自动校验
+#      （根目录含 SKILL.md / 层级<=2 / 文件名全 ASCII / 包体<3M，不满足即报错退出）
 set -e
 cd "$(dirname "$0")/.."
 PY="${PY:-/Users/samjoeyang/.workbuddy/binaries/python/envs/default/bin/python}"
 
-"$PY" dist/flatten_package.py      # 展平嵌套目录（幂等）
-"$PY" dist/normalize_filenames.py  # 文件名 ASCII 化并同步引用（幂等）
-"$PY" dist/zip_package.py          # 打包并校验（层级/根目录 SKILL.md/编码/体积）
+# 同步两个共享的内容文件到单技能包源目录。
+# 注意：不要覆盖 publish/ip-platform-complaint/SKILL.md ——
+# 它是单技能包自己的入口，带单场景定位描述与 @ 引用，与聚合包内的版本不同。
+mkdir -p publish/ip-platform-complaint
+for f in platform-guides.md complaint-materials.md; do
+  cp "publish/ipswordmaster/ip-platform-complaint/$f" "publish/ip-platform-complaint/$f"
+done
 
-ls -lh dist/ipswordmaster.zip
+"$PY" dist/flatten_package.py
+"$PY" dist/normalize_filenames.py
+"$PY" dist/fix_stale_paths.py
+
+echo "--- 聚合包 ---"
+"$PY" dist/zip_package.py publish/ipswordmaster dist/ipswordmaster.zip
+
+echo "--- 平台投诉单技能包 ---"
+"$PY" dist/zip_package.py publish/ip-platform-complaint dist/ip-platform-complaint.zip
+
+ls -lh dist/ipswordmaster.zip dist/ip-platform-complaint.zip

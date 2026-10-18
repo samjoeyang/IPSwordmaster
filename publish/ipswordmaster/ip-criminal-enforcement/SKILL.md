@@ -19,7 +19,7 @@ agent_created: true
 
 ## Workflow
 
-1. **罪名识别**：根据行为与权利类型对应罪名，详见 `references/crimes-and-thresholds.md`：
+1. **罪名识别**：根据行为与权利类型对应罪名，详见 `crimes-and-thresholds.md`：
    - 假冒注册商标罪（未经许可在同一种商品上使用相同商标）。
    - 销售假冒注册商标的商品罪（明知是假冒注册商标商品而销售）。
    - 非法制造、销售非法制造的注册商标标识罪。
@@ -49,7 +49,7 @@ agent_created: true
 
 ## Resources
 
-- `references/crimes-and-thresholds.md`：各罪名、立案追诉标准、报案要点与刑民衔接。
+- `crimes-and-thresholds.md`：各罪名、立案追诉标准、报案要点与刑民衔接。
 
 ## 作者
 

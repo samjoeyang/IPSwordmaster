@@ -20,11 +20,11 @@ S2 是维权链条中最关键的"定性"环节：用权利文本（权利要求
 ## Workflow
 
 1. **确定比对框架**：先识别权利类型（发明/实用新型/外观设计专利、商标、著作权、商业秘密、或多项竞合），按对应章节读取规则：
-   - 专利（发明/实用新型）：`references/patent-comparison.md`
-   - 专利（外观设计）：`references/patent-comparison.md`（外观章节）
-   - 商标：`references/trademark-comparison.md`
-   - 著作权：`references/copyright-comparison.md`
-   - 商业秘密：`references/trade-secret-comparison.md`
+   - 专利（发明/实用新型）：`patent-comparison.md`
+   - 专利（外观设计）：`patent-comparison.md`（外观章节）
+   - 商标：`trademark-comparison.md`
+   - 著作权：`copyright-comparison.md`
+   - 商业秘密：`trade-secret-comparison.md`
 2. **固定比对对象**：明确被控对象（产品/技术方案/标识/作品/信息载体）及来源证据（S3 产出的证据包），仅以证据支持的形态做比对，不做无据推测。
 3. **逐项比对**：
    - 按权利文本的技术特征/标识要素/独创性表达/密点逐项分解，与被控对象对应项一一比对。
@@ -41,10 +41,10 @@ S2 是维权链条中最关键的"定性"环节：用权利文本（权利要求
 
 ## Resources
 
-- `references/patent-comparison.md`：发明/实用新型全面覆盖与等同原则、外观设计相同/近似判断。
-- `references/trademark-comparison.md`：商标相同/近似、商品类似、混淆可能性。
-- `references/copyright-comparison.md`：接触+实质性相似、合理使用边界。
-- `references/trade-secret-comparison.md`：三要件、密点对应、侵权行为类型。
+- `patent-comparison.md`：发明/实用新型全面覆盖与等同原则、外观设计相同/近似判断。
+- `trademark-comparison.md`：商标相同/近似、商品类似、混淆可能性。
+- `copyright-comparison.md`：接触+实质性相似、合理使用边界。
+- `trade-secret-comparison.md`：三要件、密点对应、侵权行为类型。
 
 ## 作者
 

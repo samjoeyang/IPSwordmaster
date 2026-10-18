@@ -20,7 +20,7 @@ agent_created: true
 ## Workflow
 
 1. **确认权利基础**：先引用 S0 `ip-rights-audit` 产出的权利清单；若尚未建立，先要求用户提供权利凭证，避免对无效/过期权利做无用发现。
-2. **收集线索**：按 `references/discovery-channels.md` 的渠道清单系统检索（电商平台关键词/图片、线下与展会、社媒、海关、域名），逐条记录发现时间、渠道、链接、截图存档。
+2. **收集线索**：按 `discovery-channels.md` 的渠道清单系统检索（电商平台关键词/图片、线下与展会、社媒、海关、域名），逐条记录发现时间、渠道、链接、截图存档。
 3. **锁定主体链**：对每条线索做主体溯源：
    - 线上：店铺主体（营业执照信息）、发货地、品牌授权情况、销量与价格（判断是否明显低于正常价）、是否支持一件代发。
    - 线下/展会：展位主体、生产商标识、包装厂名厂址。
@@ -36,7 +36,7 @@ agent_created: true
    - A 级（优先处理）：证据明显（可直接购买取证）、销量/规模大、影响核心市场。
    - B 级（常规处理）：证据较明确、规模中等。
    - C 级（观察）：疑似但证据不足，列入监测继续观察。
-6. **输出线索台账**：按 `references/discovery-channels.md` 的台账模板整理，标记每条线索的取证建议（购买取证/公证/存证），交接给 S3 证据固定或 S2 侵权比对。
+6. **输出线索台账**：按 `discovery-channels.md` 的台账模板整理，标记每条线索的取证建议（购买取证/公证/存证），交接给 S3 证据固定或 S2 侵权比对。
 
 ## Output Standards
 
@@ -46,7 +46,7 @@ agent_created: true
 
 ## Resources
 
-- `references/discovery-channels.md`：渠道检索方法、主体溯源要点、线索分级标准。
+- `discovery-channels.md`：渠道检索方法、主体溯源要点、线索分级标准。
 - 可与 S2 `ip-infringement-analysis`、S3 `ip-evidence-collection` 衔接使用。
 
 ## 作者

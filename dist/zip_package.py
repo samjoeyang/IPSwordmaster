@@ -7,8 +7,11 @@
 # 构建后自动校验，任一约束不满足即报错退出。
 import os, sys, zipfile
 
-ROOT = "publish/ipswordmaster"
-OUT = "dist/ipswordmaster.zip"
+# 用法: zip_package.py [源目录] [输出 zip]
+# 默认打包聚合包；也可打包单技能，例如：
+#   zip_package.py publish/ip-platform-complaint dist/ip-platform-complaint.zip
+ROOT = sys.argv[1] if len(sys.argv) > 1 else "publish/ipswordmaster"
+OUT = sys.argv[2] if len(sys.argv) > 2 else "dist/ipswordmaster.zip"
 EXCLUDE_DIRS = {"assets", "__MACOSX"}
 EXCLUDE_EXT = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"}
 MAX_DEPTH = 2          # 根目录/二级目录/文件
