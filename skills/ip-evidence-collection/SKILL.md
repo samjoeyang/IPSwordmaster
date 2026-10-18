@@ -11,7 +11,7 @@ description: |-
   不适用于：证据合法性审查、质证意见、司法鉴定申请、诉讼举证策略。
 description_zh: 生成侵权线索的取证操作清单、证据目录与存证材料清单，并给出固证方式选择建议
 description_en: Generates evidence collection checklists, evidence catalogs and preservation plans for confirmed infringement leads
-version: 0.1.0
+version: 0.1.1
 author: SamjoeYang - 上海不丁网络科技有限公司
 license: MIT
 agent_created: true

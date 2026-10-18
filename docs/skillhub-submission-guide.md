@@ -9,7 +9,7 @@
 
 | 项目 | 路径 / 值 |
 |---|---|
-| 聚合包 zip（已提交审核） | `dist/ipswordmaster.zip` |
+| 聚合包 zip（**v1.0.1，需重新提交**） | `dist/ipswordmaster.zip` |
 | 平台投诉单技能 zip | `dist/ip-platform-complaint.zip` |
 | 法言法语翻译器 zip（**备用，当前不提交**） | `dist/legal-lingo-translator.zip` |
 | 聚合包源码（备查） | `publish/ipswordmaster/` |
@@ -18,6 +18,15 @@
 | 开发者主页文案 | `docs/developer-homepage-copy.md`（联系方式**只填这里**） |
 
 > 三个包都**不含 PNG**：图片已外部托管，包体分别为 96K（聚合）、5K（平台投诉）、12K（法言法语翻译器），远低于 3M 限制。
+
+### 1.1 聚合包版本记录
+
+| 版本 | 状态 | 说明 |
+|---|---|---|
+| `1.0.0` | 已提交审核（含缺陷） | 展平后 SKILL.md 残留 **44 处失效路径**（如 `` `references/platform-guides.md` ``），会误导模型读取不存在的文件 |
+| `1.0.1` | **当前包，待重新提交** | 44 处失效路径全部修正为展平后的真实路径（实测 0 处残留）；12 个子技能版本同步 +1 patch |
+
+> 按「version 递增铁律」，重传必须 bump 版本号。提交后在 portal 确认解析出的版本为 `1.0.1`。
 
 
 

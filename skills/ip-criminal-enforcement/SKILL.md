@@ -5,7 +5,7 @@ display_name_en: Criminal IP Enforcement
 description: 知识产权刑事维权：假冒注册商标罪、销售假冒注册商标的商品罪、非法制造/销售非法制造的注册商标标识罪、侵犯著作权罪、侵犯商业秘密罪、假冒专利罪的罪名识别、立案标准与报案/自诉流程，以及刑事附带民事赔偿衔接。当用户需要"报案抓仿冒""刑事立案标准""假冒侵权够不够判刑""刑附民索赔"时使用。Also usable in English when the user mentions IP criminal enforcement, counterfeiting crime, criminal complaint, criminal-civil joinder.
 description_zh: 知识产权刑事维权：假冒注册商标罪、销售假冒注册商标的商品罪、侵犯著作权罪、侵犯商业秘密罪、假冒专利罪的罪名识别、立案标准与报案/自诉流程，以及刑事附带民事赔偿衔接。
 description_en: 'Criminal IP enforcement: identifies the charged offenses (counterfeiting registered trademarks, selling counterfeits, copyright infringement, trade-secret misappropriation, false patent marking), explains filing thresholds and police-report/private-prosecution procedures, and bridges criminal proceedings with ancillary civil compensation.'
-version: 1.0.0
+version: 1.0.1
 author: SamjoeYang - 上海不丁网络科技有限公司
 license: MIT
 agent_created: true

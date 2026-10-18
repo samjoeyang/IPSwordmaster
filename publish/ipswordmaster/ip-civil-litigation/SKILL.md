@@ -5,7 +5,7 @@ display_name_en: IP Civil Litigation
 description: 知识产权民事诉讼：管辖确定、诉前/诉中行为保全（禁令）与财产/证据保全、起诉与举证、损害赔偿计算（实际损失/侵权获利/许可费合理倍数/法定赔偿、恶意侵权惩罚性赔偿）、一审二审程序。当用户需要"起诉侵权""申请禁令""诉前保全""计算赔偿金额""写起诉状/证据目录"时使用。Also usable in English when the user mentions IP civil litigation, injunction, preliminary injunction, evidence preservation, damages calculation, filing a complaint.
 description_zh: 知识产权民事诉讼：管辖确定、诉前/诉中行为保全（禁令）与财产/证据保全、起诉与举证、损害赔偿计算（实际损失/侵权获利/许可费合理倍数/法定赔偿、恶意侵权惩罚性赔偿）、一审二审程序。
 description_en: 'IP civil litigation: jurisdiction, pre-trial/in-trial injunctions and property/evidence preservation, pleading and proof, damages calculation (actual loss / infringer''s profit / reasonable multiple of license fee / statutory damages, plus punitive damages for wilful infringement), and first/second-instance procedure.'
-version: 1.0.0
+version: 1.0.1
 author: SamjoeYang - 上海不丁网络科技有限公司
 license: MIT
 agent_created: true

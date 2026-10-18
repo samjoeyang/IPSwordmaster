@@ -5,7 +5,7 @@ display_name_en: Cross-border IP Enforcement
 description: 知识产权跨境维权：中国出口环节海关保护、境外电商平台投诉（Amazon Brand Registry/eBay VeRO/AliExpress/TikTok Shop/Wish等）、境外侵权排查与行政司法救济（美国 ITC 337 调查、海外诉讼/仲裁、国际展会维权）、以及马德里商标/PCT 专利国际布局与跨境证据（公证认证、翻译）衔接。当用户需要"海外被仿冒怎么办""亚马逊上有人卖假货""货物出口被扣""337调查""跨境维权"时使用。Also usable in English when the user mentions cross-border IP enforcement, Amazon/eBay takedown, ITC 337 investigation, overseas litigation, Madrid/PCT layout.
 description_zh: 知识产权跨境维权：中国出口环节海关保护、境外电商平台投诉（Amazon Brand Registry/eBay VeRO/AliExpress/TikTok Shop等）、境外侵权排查与行政司法救济（美国 ITC 337 调查、海外诉讼/仲裁、国际展会维权）、以及马德里商标/PCT 专利国际布局与跨境证据衔接。
 description_en: 'Cross-border IP enforcement: China export customs protection; overseas e-commerce complaints (Amazon Brand Registry, eBay VeRO, AliExpress, TikTok Shop); offshore infringement investigation and administrative/judicial relief (US ITC Section 337, overseas litigation/arbitration, international trade-fair enforcement); and Madrid/PCT global layout with cross-border evidence coordination.'
-version: 1.0.0
+version: 1.0.1
 author: SamjoeYang - 上海不丁网络科技有限公司
 license: MIT
 agent_created: true

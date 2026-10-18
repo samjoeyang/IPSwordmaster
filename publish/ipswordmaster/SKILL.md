@@ -5,7 +5,7 @@ display_name_en: IP Rights Full-Chain Enforcement Skill Pack
 description: 知识产权全链路维权技能包（聚合版）。一套覆盖确权核查、侵权发现、侵权比对、证据固定、平台投诉、行政保护、民事诉讼、刑事维权、判决执行与跨境维权的 12 个 Agent 技能集合，可被主流 AI Agent 平台作为 Skill 直接安装使用。当用户涉及"知识产权维权""专利/商标/著作权/商业秘密被侵权""下架假货链接""起诉侵权""行政投诉/海关扣货""刑事报案""跨境维权/亚马逊投诉/ITC 337"等场景时使用。Also usable in English when the user mentions IP enforcement, IP litigation, takedown, counterfeiting, customs seizure, ITC 337, or intellectual-property rights protection.
 description_zh: 聚合 12 个知识产权维权 Agent 技能，覆盖确权核查、侵权研判、取证固证、平台投诉、行政保护、民事诉讼、刑事维权、裁判执行与跨境维权全链路，可被主流 AI Agent 平台作为 Skill 直接安装使用。
 description_en: An aggregated pack of 12 IP-enforcement Agent skills covering the full chain - rights audit, lead screening, evidence collection, platform complaint, administrative action, civil litigation, criminal enforcement, judgment execution and cross-border enforcement - installable as Skills on major AI Agent platforms.
-version: 1.0.0
+version: 1.0.1
 author: SamjoeYang - 上海不丁网络科技有限公司
 license: MIT
 agent_created: true

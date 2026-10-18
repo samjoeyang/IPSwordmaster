@@ -11,7 +11,7 @@ description: |-
   不适用于：诉讼代理、行政投诉（市场监管/海关）、律师函起草、赔偿谈判策略、刑事案件报案。
 description_zh: 生成平台投诉方案：通道选择、案由、材料清单、侵权对比说明、提交节奏、驳回补救与申诉应对
 description_en: "Generates platform takedown plans: channel selection, claim basis, evidence checklist, comparison statement, submission cadence, appeal handling"
-version: 0.1.0
+version: 0.1.1
 author: SamjoeYang - 上海不丁网络科技有限公司
 license: MIT
 agent_created: true

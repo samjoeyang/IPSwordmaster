@@ -12,7 +12,7 @@ description: |-
   若用户要的是上述场景，明确说明本技能不覆盖，并建议其咨询具备执业资格的专业人员。
 description_zh: 批量研判侵权线索，输出侵权类型、近似度、证据强度、风险分级与处置建议，可直接回填维权台账
 description_en: Batch-screens suspected infringement leads, outputting type, similarity, evidence strength, risk grading and recommended actions in a ledger-ready format
-version: 0.3.0
+version: 0.3.1
 author: SamjoeYang - 上海不丁网络科技有限公司
 license: MIT
 agent_created: true
