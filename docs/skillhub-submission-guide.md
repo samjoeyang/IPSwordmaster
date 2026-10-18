@@ -1,36 +1,38 @@
 # SkillHub 提交指南（ipswordmaster）
 
-> 用途：本仓库已把技能包补到「可过审」最终形态。本文是提交到 WorkBuddy 技能市场（SkillHub）的**人工上传操作清单**。
+> 用途：本仓库已把技能包补到「可过审」最终形态。本文是提交到 WorkBuddy 技能市场（SkillHub）的**人工上传操作清单**。  
 > 重要：当前环境**没有**「提交到技能市场」的 API，实际上传必须在 **WorkBuddy 开放平台 portal（open.workbuddy.cn）** 完成，并经过「机器扫描 + AI 审核 + 人工抽检」，约 7 个工作日。
 
 ---
 
 ## 1. 待提交资产
 
-| 项目 | 路径 / 值 |
-|---|---|
-| 技能包 zip（提交文件） | `dist/ipswordmaster.zip` |
-| 聚合包源码（备查） | `publish/ipswordmaster/` |
-| 封面图（1 张） | `publish/ipswordmaster/assets/cover.png` |
-| 各技能图标（12 张） | `publish/ipswordmaster/assets/ip-<技能名>/ip-<技能名>.png` |
-| 开发者主页文案 | `docs/developer-homepage-copy.md`（联系方式**只填这里**） |
+| 项目            | 路径 / 值                                               |
+| ------------- | ---------------------------------------------------- |
+| 技能包 zip（提交文件） | `dist/ipswordmaster.zip`                             |
+| 聚合包源码（备查）     | `publish/ipswordmaster/`                             |
+| 封面图（1 张）      | `publish/ipswordmaster/assets/cover.png`             |
+| 各技能图标（12 张）   | `publish/ipswordmaster/assets/ip-<技能名>/ip-<技能名>.png` |
+| 开发者主页文案       | `docs/developer-homepage-copy.md`（联系方式**只填这里**）      |
+
+
 
 ---
 
 ## 2. portal 填写字段建议
 
-| 字段 | 建议值 |
-|---|---|
-| 资产类型 | Skill（技能） |
-| 名称（name，小写、连字符） | `ipswordmaster` |
-| 展示名（display_name） | 知识产权全链路维权技能包 |
-| 展示名（英文） | IP Rights Full-Chain Enforcement Skill Pack |
-| 分类 | 法律 / 知识产权（或「法律合规」） |
-| 标签 | 专利、商标、著作权、商业秘密、维权、下架、平台投诉、海关保护、ITC 337、跨境维权 |
-| 简介（中文） | 聚合 12 个知识产权维权 Agent 技能，覆盖确权核查、侵权研判、取证固证、平台投诉、行政保护、民事诉讼、刑事维权、裁判执行与跨境维权全链路，可被主流 AI Agent 平台作为 Skill 直接安装使用。 |
-| 简介（英文） | An aggregated pack of 12 IP-enforcement Agent skills covering the full chain — rights audit, lead screening, evidence collection, platform complaint, administrative action, civil litigation, criminal enforcement, judgment execution and cross-border enforcement — installable as Skills on major AI Agent platforms. |
-| 封面 | 上传 `assets/cover.png` |
-| 图标 | 各技能对应 `assets/ip-*/` 下 PNG |
+| 字段                | 建议值                                                                                                                                                                                                                                                                                                                       |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 资产类型              | Skill（技能）                                                                                                                                                                                                                                                                                                                 |
+| 名称（name，小写、连字符）   | `ipswordmaster`                                                                                                                                                                                                                                                                                                           |
+| 展示名（display_name） | 知识产权全链路维权技能包                                                                                                                                                                                                                                                                                                              |
+| 展示名（英文）           | IP Rights Full-Chain Enforcement Skill Pack                                                                                                                                                                                                                                                                               |
+| 分类                | 法律 / 知识产权（或「法律合规」）                                                                                                                                                                                                                                                                                                        |
+| 标签                | 专利、商标、著作权、商业秘密、维权、下架、平台投诉、海关保护、ITC 337、跨境维权                                                                                                                                                                                                                                                                               |
+| 简介（中文）            | 聚合 12 个知识产权维权 Agent 技能，覆盖确权核查、侵权研判、取证固证、平台投诉、行政保护、民事诉讼、刑事维权、裁判执行与跨境维权全链路，可被主流 AI Agent 平台作为 Skill 直接安装使用。                                                                                                                                                                                                                 |
+| 简介（英文）            | An aggregated pack of 12 IP-enforcement Agent skills covering the full chain — rights audit, lead screening, evidence collection, platform complaint, administrative action, civil litigation, criminal enforcement, judgment execution and cross-border enforcement — installable as Skills on major AI Agent platforms. |
+| 封面                | 上传 `assets/cover.png`                                                                                                                                                                                                                                                                                                     |
+| 图标                | 各技能对应 `assets/ip-*/` 下 PNG                                                                                                                                                                                                                                                                                                |
 
 > 上述 name / display_name / description_zh / description_en / version / author 已内置在 `dist/ipswordmaster.zip` 的 SKILL.md 中，portal 解析后通常自动带入；若 portal 另需表单填写，按上表填即可。
 
