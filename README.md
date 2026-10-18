@@ -40,6 +40,10 @@
 
 > **平台投诉专用子链路**：`ip-infringement-screening`（研判分级）→ `ip-evidence-collection`（固证）→ `ip-complaint-playbook`（投诉方案）→ `ip-platform-complaint`（执行下架）。该子链路源自 CodeBuddy 插件「维权下架官」，已融合进本包的 S1–S4 阶段，详见 [`vendor/codebuddy-plugin/`](vendor/codebuddy-plugin/)。
 
+> 上表 12 个技能即**聚合包 `ipswordmaster` 的全部内容**。
+> 本仓库 `skills/` 下另有一个通用法律工具 `legal-lingo-translator`（法言法语翻译器），
+> 它与 IP 维权不同品类，**不并入聚合包**，仅作为独立技能存放于项目目录，详见 [9.2 节](#92-独立技能法言法语翻译器legal-lingo-translator)。
+
 完整功能说明见 [`docs/IP维权技能系列总览.md`](docs/IP维权技能系列总览.md)。
 
 ## 二、全链路衔接
@@ -220,13 +224,14 @@ python3 /path/to/skill-creator-for-work/scripts/quick_validate.py skills/ip-righ
 
 ### 9.2 独立技能：法言法语翻译器（legal-lingo-translator）
 
-除 IP 维权技能包外，本仓库另有一个**通用法律语言工具**，独立发布、不并入聚合包：
+除 IP 维权技能包外，本仓库另有一个**通用法律语言工具**。它**不并入聚合包**，仅作为独立技能存放于项目目录：
 
 - **源码**：`skills/legal-lingo-translator/`（`SKILL.md` + `terminology.md` + `templates.md`，扁平结构，直接满足平台两级目录限制）
-- **发布产物**：`dist/legal-lingo-translator.zip`（12K，3 个文件，全部位于 zip 根目录）
 - **功能**：日常口语 ⇄ 法律书面语双向转换。正向把口语改写为庭审陈述、起诉状、报案材料、劳动仲裁申请书可用的规范表述；反向把判决书、律师函、合同条款、法条译为大白话并点明实际影响与关键期限
 - **覆盖场景**：民事纠纷、刑事报案、劳动争议、婚姻家事、通用
-- **提交方式**：单独上传到 portal，并提交指南 2.2 节的差异化说明（与 IP 类技能属不同品类、不同用户群）
+- **定位**：与 IP 维权技能**不同品类、不同用户群**（C 端个人 vs B 端权利人），解决的是语言转换而非维权方案，故不并入 `ipswordmaster`，也不与 12 个 IP 技能混装
+
+> **如需单独上架 SkillHub**：`dist/legal-lingo-translator.zip`（12K，3 个文件，全部位于 zip 根目录）已由 `dist/build_package.sh` 自动生成，可直接上传；提交时的字段与差异化说明见 [`docs/skillhub-submission-guide.md`](docs/skillhub-submission-guide.md) 2.2 节。当前默认只存放于项目目录，未单独提交。
 
 ```bash
 # 一键重建全部三个包（展平 → ASCII 化 → 修失效路径 → 打包 + 自动校验）

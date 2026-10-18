@@ -11,7 +11,7 @@
 |---|---|
 | 聚合包 zip（已提交审核） | `dist/ipswordmaster.zip` |
 | 平台投诉单技能 zip | `dist/ip-platform-complaint.zip` |
-| **法言法语翻译器单技能 zip（新）** | `dist/legal-lingo-translator.zip` |
+| 法言法语翻译器 zip（**备用，当前不提交**） | `dist/legal-lingo-translator.zip` |
 | 聚合包源码（备查） | `publish/ipswordmaster/` |
 | 单技能源码（备查） | `publish/ip-platform-complaint/`、`publish/legal-lingo-translator/` |
 | 封面图 / 技能图标 | 已移出 zip，外部托管于 `https://ipswordmaster.zhenzhidaole.com/`（见 `docs/image-hosting-guide.md`），portal 提交表单里单独上传 |
@@ -56,6 +56,9 @@
 
 ### 2.2 法言法语翻译器（legal-lingo-translator）填写字段
 
+> **状态**：该技能**默认只存放于项目目录 `skills/legal-lingo-translator/`**，不并入聚合包，
+> 当前也未单独提交。本节为**备用**——若日后决定单独上架，按此填写即可。
+
 | 字段 | 建议值 |
 |---|---|
 | 资产类型 | Skill（技能） |
@@ -77,7 +80,7 @@
 3. **上传 zip**：
    - 提交**聚合包** → 选择 `dist/ipswordmaster.zip`（已提交审核）。
    - 提交**平台投诉单技能** → 选择 `dist/ip-platform-complaint.zip`，并在表单里填好 2.1 节的「差异化说明」。
-   - 提交**法言法语翻译器** → 选择 `dist/legal-lingo-translator.zip`，并在表单里填好 2.2 节的「差异化说明」。
+   - 提交**法言法语翻译器**（可选，当前默认不提交）→ 选择 `dist/legal-lingo-translator.zip`，并在表单里填好 2.2 节的「差异化说明」。
 4. **核对并补字段**：确认名称、分类、标签、封面/图标，按第 2 节填。
 5. **提交审核**：提交后进入「安全扫描 + AI 审核 + 人工抽检」。
 6. **过审上架**：通过后上架生态市场，用户可搜索/安装；后台可见安装量与评价。
@@ -86,9 +89,9 @@
 
 ## 4. 合规红线提醒（提交前必读）
 
-- **同品牌单一入口（重点）**：平台要求同品牌原则上单一入口。因此**不要**把 12 个子技能逐个单独上架。目前额外上架的单技能只有 `ip-platform-complaint` 与 `legal-lingo-translator` 两个，且**每个都必须**随附差异化材料：
-  - `ip-platform-complaint`：IP 垂类内部单环节 vs 聚合包全链路（见 2.1 节）。
-  - `legal-lingo-translator`：通用法律语言工具，与 IP 维权属不同品类、不同用户群（C 端个人 vs B 端权利人），解决的问题是语言转换而非维权方案（见 2.2 节）。
+- **同品牌单一入口（重点）**：平台要求同品牌原则上单一入口。因此**不要**把 12 个子技能逐个单独上架。目前安排如下：
+  - **已单独上架**：`ip-platform-complaint`（IP 垂类内部单环节 vs 聚合包全链路，见 2.1 节）。
+  - **暂不单独上架**：`legal-lingo-translator` —— 仅存放于项目目录 `skills/`，不进聚合包也不单独提交。若日后要上架，必须随附 2.2 节的差异化说明（通用法律工具 vs IP 维权，不同品类、不同用户群）。
   
   若审核追问，按对应说明应答。**再新增单技能前先评估是否会构成重复入口。**
 - **零外链 / 零导流**：包内已确保无任何 http/https 链接、裸域名、二维码、作者邮箱或「联系我」CTA。联系方式只放在开发者主页。
@@ -102,7 +105,7 @@
 
 提交前用 `bash dist/build_package.sh` 一键重建，脚本会自动校验并报错：
 
-- [ ] 三个 zip 均已生成：`dist/ipswordmaster.zip`（96K）、`dist/ip-platform-complaint.zip`（5K）、`dist/legal-lingo-translator.zip`（12K）
+- [ ] zip 均已生成：`dist/ipswordmaster.zip`（96K）、`dist/ip-platform-complaint.zip`（5K）；`dist/legal-lingo-translator.zip`（12K，备用）
 - [ ] 自动校验通过：zip 根目录含 SKILL.md、目录层级 ≤2、文件名全 ASCII、无 PNG、包体 <3M
 - [ ] 包内零外链 / 零裸域名 / 零作者联系方式
 - [ ] 所有 SKILL.md 均含 `name`/`description`/`description_zh`/`description_en`/`version`/`author`
