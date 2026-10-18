@@ -6,6 +6,8 @@ import os, re, subprocess, sys
 
 ROOT = "publish/ipswordmaster"
 SUBS = ["references", "templates", "scripts", "assets"]
+# 根目录下的资源目录，不是技能目录，展平时跳过
+NON_SKILL = {"assets", "references", "templates", "scripts"}
 LINK_RE = re.compile(r"@(references|templates|scripts|assets)/([^)\s@]+)")
 
 def git_mv(src, dst):
@@ -21,7 +23,7 @@ def main():
     mappings = {}
     for skill in sorted(os.listdir(ROOT)):
         sdir = os.path.join(ROOT, skill)
-        if not os.path.isdir(sdir) or not skill.startswith("ip-"):
+        if not os.path.isdir(sdir) or skill in NON_SKILL:
             continue
         mapping = {}
         for sub in SUBS:

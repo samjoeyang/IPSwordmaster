@@ -199,7 +199,7 @@ python3 /path/to/skill-creator-for-work/scripts/quick_validate.py skills/ip-righ
 本技能包已打包为单一聚合技能 `ipswordmaster`，可按下方指南提交到 SkillHub：
 
 - **聚合包源码**：`publish/ipswordmaster/`（入口 `SKILL.md` + 12 个子技能目录 + `assets/` 图标素材：1 张封面 + 12 个技能图标）
-- **发布产物**：`dist/ipswordmaster.zip`（经 `skill-creator` 的 `package_skill.py` 校验并打包，含 13 个 SKILL.md + 13 张 PNG）
+- **发布产物**：`dist/ipswordmaster.zip`（96K，含 13 个 SKILL.md 与全部内容文件；**不含 PNG**，图片已外部托管，见 `docs/image-hosting-guide.md`）
 - **安装方式**：在 WorkBuddy 中用提示词「安装 skill: ipswordmaster」，或解压到目标平台 `skills/` 目录
 - **字段完整性**：13 个 SKILL.md 均含 `name` / `description` / `description_zh` / `description_en` / `version` / `author` / `license` / `agent_created`（其中 3 个交付物技能另含 `display_name` / `display_name_en`，其余 9 个原技能与入口也已补齐），全部通过 `quick_validate.py`
 - **合规状态**：包内零外链、零裸域名、零作者联系方式（联系方式仅放在开发者主页，见下）
@@ -216,4 +216,19 @@ python3 /path/to/skill-creator-for-work/scripts/quick_validate.py skills/ip-righ
 - `vendor/codebuddy-plugin/legacy-project-skills/`：融合前本仓库 `ip-evidence-collection` 的旧版本（含 `scripts/evidence_inventory.py`），用于对照与回滚
 - `docs/strategy/`：商业化落地 / 路线图等策略文档（HTML）
 
-> WorkBuddy 用户直接安装 `skills/` 下的 12 个技能即可；CodeBuddy 用户可使用 `vendor/codebuddy-plugin/plugin-src/`。两形态内容一致，仅封装格式不同。
+> WorkBuddy 用户直接安装 `skills/` 下的技能即可；CodeBuddy 用户可使用 `vendor/codebuddy-plugin/plugin-src/`。两形态内容一致，仅封装格式不同。
+
+### 9.2 独立技能：法言法语翻译器（legal-lingo-translator）
+
+除 IP 维权技能包外，本仓库另有一个**通用法律语言工具**，独立发布、不并入聚合包：
+
+- **源码**：`skills/legal-lingo-translator/`（`SKILL.md` + `terminology.md` + `templates.md`，扁平结构，直接满足平台两级目录限制）
+- **发布产物**：`dist/legal-lingo-translator.zip`（12K，3 个文件，全部位于 zip 根目录）
+- **功能**：日常口语 ⇄ 法律书面语双向转换。正向把口语改写为庭审陈述、起诉状、报案材料、劳动仲裁申请书可用的规范表述；反向把判决书、律师函、合同条款、法条译为大白话并点明实际影响与关键期限
+- **覆盖场景**：民事纠纷、刑事报案、劳动争议、婚姻家事、通用
+- **提交方式**：单独上传到 portal，并提交指南 2.2 节的差异化说明（与 IP 类技能属不同品类、不同用户群）
+
+```bash
+# 一键重建全部三个包（展平 → ASCII 化 → 修失效路径 → 打包 + 自动校验）
+bash dist/build_package.sh
+```

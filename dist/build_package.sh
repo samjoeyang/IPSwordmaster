@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # 构建 SkillHub 上架包，一次性满足平台全部结构约束。
 # 产出：
-#   dist/ipswordmaster.zip        —— 聚合包（12 合 1）
-#   dist/ip-platform-complaint.zip —— 平台投诉单技能包
+#   dist/ipswordmaster.zip          —— 聚合包（12 合 1）
+#   dist/ip-platform-complaint.zip  —— 平台投诉单技能包
+#   dist/legal-lingo-translator.zip —— 法言法语翻译器单技能包
 #
 # 流水线（全部幂等，可反复执行）：
 #   1) flatten_package.py      展平子技能内的 references/ templates/ scripts/ assets/ → 最多两级目录
@@ -22,6 +23,12 @@ for f in platform-guides.md complaint-materials.md; do
   cp "publish/ipswordmaster/ip-platform-complaint/$f" "publish/ip-platform-complaint/$f"
 done
 
+# 法言法语翻译器：源码已是扁平结构（符合两级限制），直接整体同步为独立包源
+mkdir -p publish/legal-lingo-translator
+for f in SKILL.md terminology.md templates.md; do
+  cp "skills/legal-lingo-translator/$f" "publish/legal-lingo-translator/$f"
+done
+
 "$PY" dist/flatten_package.py
 "$PY" dist/normalize_filenames.py
 "$PY" dist/fix_stale_paths.py
@@ -32,4 +39,7 @@ echo "--- 聚合包 ---"
 echo "--- 平台投诉单技能包 ---"
 "$PY" dist/zip_package.py publish/ip-platform-complaint dist/ip-platform-complaint.zip
 
-ls -lh dist/ipswordmaster.zip dist/ip-platform-complaint.zip
+echo "--- 法言法语翻译器单技能包 ---"
+"$PY" dist/zip_package.py publish/legal-lingo-translator dist/legal-lingo-translator.zip
+
+ls -lh dist/ipswordmaster.zip dist/ip-platform-complaint.zip dist/legal-lingo-translator.zip
