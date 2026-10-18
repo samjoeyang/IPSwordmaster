@@ -1,6 +1,8 @@
 ---
 name: ip-infringement-analysis
-description: 知识产权侵权比对与风险评估。用于把被控侵权方案/标识/作品/技术信息与权利文本逐项比对，按专利（全面覆盖/等同原则）、商标（相同近似+混淆）、著作权（接触+实质性相似）、商业秘密（三要件+密点对应）判断是否构成侵权，并预判被告抗辩（现有技术/先用权/合法来源/合理使用/不视为侵权），输出侵权比对分析报告与胜诉可能性评估。当用户需要"判断是否侵权""胜算多大""被控侵权怎么应对"时使用。
+description: 知识产权侵权比对与风险评估。用于把被控侵权方案/标识/作品/技术信息与权利文本逐项比对，按专利（全面覆盖/等同原则）、商标（相同近似+混淆）、著作权（接触+实质性相似）、商业秘密（三要件+密点对应）判断是否构成侵权，并预判被告抗辩（现有技术/先用权/合法来源/合理使用/不视为侵权），输出侵权比对分析报告与胜诉可能性评估。当用户需要"判断是否侵权""胜算多大""被控侵权怎么应对"时使用。Also usable in English when the user mentions IP infringement comparison, patent/trademark/copyright/trade-secret analysis, infringement assessment, win-probability evaluation.
+version: 1.0.0
+license: MIT
 ---
 
 # 权利核查与侵权比对（S2）

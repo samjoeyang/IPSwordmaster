@@ -148,7 +148,7 @@ python3 /path/to/skill-creator-for-work/scripts/quick_validate.py skills/ip-righ
 
 | 兼容性要素 | 状态 |
 |---|---|
-| frontmatter 字段 | 仅 `name` + `description`（标准格式） |
+| frontmatter 字段 | 核心为 `name` + `description`（标准最小格式）；另含可选元数据 `version` + `license`，不影响最小格式兼容 |
 | 资源引用 | 全部相对路径，目录迁移不断链 |
 | 脚本依赖 | 仅 Python 标准库（argparse/json/sys），零第三方依赖 |
 | 绝对路径硬编码 | 无 |

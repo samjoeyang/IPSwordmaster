@@ -1,6 +1,8 @@
 ---
 name: ip-civil-litigation
-description: 知识产权民事诉讼：管辖确定、诉前/诉中行为保全（禁令）与财产/证据保全、起诉与举证、损害赔偿计算（实际损失/侵权获利/许可费合理倍数/法定赔偿、恶意侵权惩罚性赔偿）、一审二审程序。当用户需要"起诉侵权""申请禁令""诉前保全""计算赔偿金额""写起诉状/证据目录"时使用。
+description: 知识产权民事诉讼：管辖确定、诉前/诉中行为保全（禁令）与财产/证据保全、起诉与举证、损害赔偿计算（实际损失/侵权获利/许可费合理倍数/法定赔偿、恶意侵权惩罚性赔偿）、一审二审程序。当用户需要"起诉侵权""申请禁令""诉前保全""计算赔偿金额""写起诉状/证据目录"时使用。Also usable in English when the user mentions IP civil litigation, injunction, preliminary injunction, evidence preservation, damages calculation, filing a complaint.
+version: 1.0.0
+license: MIT
 ---
 
 # 民事诉讼（S6 主路径）
