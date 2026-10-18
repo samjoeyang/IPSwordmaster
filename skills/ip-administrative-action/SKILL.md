@@ -3,6 +3,7 @@ name: ip-administrative-action
 description: 知识产权行政保护路径：专利侵权纠纷行政裁决、商标侵权行政查处、著作权行政处罚、知识产权海关保护。用于选择行政维权路径、准备请求/举报/处罚材料、跟进行政程序时限、申请海关备案与扣留侵权嫌疑货物。当用户需要"行政裁决""找市场监管局/知识产权局投诉""海关扣货""行政查处假货"时使用。Also usable in English when the user mentions administrative IP enforcement, patent infringement adjudication, trademark raid, customs seizure, IP administrative penalty.
 version: 1.0.0
 license: MIT
+agent_created: true
 ---
 
 # 行政保护（S5）

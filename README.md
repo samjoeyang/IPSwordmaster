@@ -170,3 +170,14 @@ python3 /path/to/skill-creator-for-work/scripts/quick_validate.py skills/ip-righ
 - **作者**：知产刀客SamjoeYang
 - **内容性质**：本技能包提供知识产权维权的方法论与流程指引，**不构成正式法律意见**；个案请结合专业律师意见使用。
 - 法律依据以中国现行有效法律、行政法规、司法解释为准，使用时请核对最新版本。
+
+## 九、发布到技能市场（SkillHub）
+
+本技能包已打包为单一聚合技能 `ipswordmaster`，可一键发布 / 安装：
+
+- **聚合包源码**：`publish/ipswordmaster/`（入口 `SKILL.md` + 10 个子技能目录 + `assets/` 图标素材：1 张封面 + 10 个技能图标）
+- **发布产物**：`dist/ipswordmaster.zip`（经 `skill-creator` 的 `package_skill.py` 校验并打包，含全部子技能与图标）
+- **安装方式**：在 WorkBuddy 中用提示词「安装 skill: ipswordmaster」，或解压到目标平台 `skills/` 目录
+- 每个子技能 frontmatter 含 `name` + `description` + `version` + `license` + `agent_created`，均通过 `quick_validate.py`
+
+> 提交到 SkillHub 需在 WorkBuddy 客户端「技能市场 → 发布 / 上传」或官网 portal 完成（含内容审核）。

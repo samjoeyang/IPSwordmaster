@@ -3,6 +3,7 @@ name: ip-criminal-enforcement
 description: 知识产权刑事维权：假冒注册商标罪、销售假冒注册商标的商品罪、非法制造/销售非法制造的注册商标标识罪、侵犯著作权罪、侵犯商业秘密罪、假冒专利罪的罪名识别、立案标准与报案/自诉流程，以及刑事附带民事赔偿衔接。当用户需要"报案抓仿冒""刑事立案标准""假冒侵权够不够判刑""刑附民索赔"时使用。Also usable in English when the user mentions IP criminal enforcement, counterfeiting crime, criminal complaint, criminal-civil joinder.
 version: 1.0.0
 license: MIT
+agent_created: true
 ---
 
 # 刑事维权（S7）

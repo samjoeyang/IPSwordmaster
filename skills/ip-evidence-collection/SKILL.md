@@ -3,6 +3,7 @@ name: ip-evidence-collection
 description: 知识产权维权证据固定与保全。用于把网络侵权（电商链接、网页、社媒）、线下侵权（市场购买、展会）、软件/商业秘密类证据做合法固定：选型取证方式（自行取证/公证/可信时间戳/区块链存证）、办理诉前证据保全、构建完整证据链并输出证据清单。当用户需要"固定证据""公证取证""存证""保全证据""做证据清单"时使用。Also usable in English when the user mentions IP evidence collection, notarization, blockchain timestamp, evidence preservation, evidence list.
 version: 1.0.0
 license: MIT
+agent_created: true
 ---
 
 # 证据固定与保全（S3）

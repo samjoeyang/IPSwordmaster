@@ -3,6 +3,7 @@ name: ip-platform-complaint
 description: 电商平台知识产权投诉（通知-删除）与申诉应对。用于向淘天（淘宝/天猫IPP平台）、京东、拼多多、抖音等平台发起商标/专利/著作权投诉、提交合格通知、跟进平台处理、应对卖家申诉、申请平台小二介入。当用户需要"下架侵权链接""投诉盗图/假货/仿品""平台投诉材料""处理卖家申诉"时使用。Also usable in English when the user mentions e-commerce IP complaint, notice-and-takedown, platform takedown, seller appeal.
 version: 1.0.0
 license: MIT
+agent_created: true
 ---
 
 # 电商平台投诉（S4 快速通道）

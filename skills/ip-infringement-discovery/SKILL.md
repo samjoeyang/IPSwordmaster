@@ -3,6 +3,7 @@ name: ip-infringement-discovery
 description: 知识产权侵权线索发现与初判。用于多渠道（电商平台、线下市场、展会、社交媒体、海关、域名）收集疑似侵权线索、锁定侵权主体及其生产/销售/进出口链条、按权利类型做初步判断并分级排序。当用户需要"找侵权线索""查谁在仿冒我""发现疑似侵权帮我评估"时使用。Also usable in English when the user mentions finding IP infringement clues, detecting counterfeits, infringement discovery, suspect monitoring.
 version: 1.0.0
 license: MIT
+agent_created: true
 ---
 
 # 侵权发现与线索初判（S1）
