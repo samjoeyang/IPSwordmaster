@@ -1,20 +1,16 @@
 #!/usr/bin/env bash
-# 重新打包 dist/ipswordmaster.zip。两点关键约束：
-#  1) 从 publish/ipswordmaster 内部打包，使 zip 根目录即技能根目录（无外层包裹目录），
-#     满足 SkillHub 两级目录限制：根目录 / 二级目录 / 文件。
-#  2) 剔除所有 *.png —— 图片改为外部托管（见 docs/image-hosting-guide.md），
-#     使包体保持在 3M 限制内（当前约 105K）。
+# 构建 SkillHub 上架包 dist/ipswordmaster.zip，一次性满足平台全部结构约束：
+#   1) 展平子技能内的 references/ templates/ scripts/ assets/ 子目录 → 最多两级目录
+#   2) 中文文件名改为 ASCII → 消除 zip 文件名编码问题（否则平台解析不到引用）
+#   3) 从 publish/ipswordmaster 内部打包 → zip 根目录即技能根目录（含 SKILL.md）
+#   4) 排除图片（*.png 等）与 assets/ → 图片外部托管，包体 < 3M
+# 全部步骤幂等，可反复执行。
 set -e
 cd "$(dirname "$0")/.."
-rm -f dist/ipswordmaster.zip
-
-# 先展平子技能内的 references/ templates/ scripts/ assets/ 子目录，消除第 3 级嵌套。
-# 幂等：已展平时无子目录可动，直接跳过；重新从 skills/ 同步后再次运行也能自动修正。
 PY="${PY:-/Users/samjoeyang/.workbuddy/binaries/python/envs/default/bin/python}"
-"$PY" dist/flatten_package.py
 
-cd publish/ipswordmaster
-zip -r ../../dist/ipswordmaster.zip . -x '*.png' -x 'assets/*' -q
-cd ../..
-echo "=== 打包完成 ==="
+"$PY" dist/flatten_package.py      # 展平嵌套目录（幂等）
+"$PY" dist/normalize_filenames.py  # 文件名 ASCII 化并同步引用（幂等）
+"$PY" dist/zip_package.py          # 打包并校验（层级/根目录 SKILL.md/编码/体积）
+
 ls -lh dist/ipswordmaster.zip
