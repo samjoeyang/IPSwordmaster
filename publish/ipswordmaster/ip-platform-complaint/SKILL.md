@@ -1,7 +1,12 @@
 ---
 name: ip-platform-complaint
+display_name: 电商平台投诉
+display_name_en: E-commerce Platform Complaint
 description: 电商平台知识产权投诉（通知-删除）与申诉应对。用于向淘天（淘宝/天猫IPP平台）、京东、拼多多、抖音等平台发起商标/专利/著作权投诉、提交合格通知、跟进平台处理、应对卖家申诉、申请平台小二介入。当用户需要"下架侵权链接""投诉盗图/假货/仿品""平台投诉材料""处理卖家申诉"时使用。Also usable in English when the user mentions e-commerce IP complaint, notice-and-takedown, platform takedown, seller appeal.
+description_zh: 电商平台知识产权投诉（通知-删除）与申诉应对：向淘天（淘宝/天猫IPP）、京东、拼多多、抖音等平台发起商标/专利/著作权投诉、提交合格通知、跟进处理、应对卖家申诉、申请平台介入。
+description_en: 'E-commerce platform IP complaints (notice-and-takedown) and appeal handling: files trademark/patent/copyright complaints on Taobao/Tmall IPP, JD, Pinduoduo, Douyin, etc., submits compliant notices, tracks processing, responds to seller appeals and requests platform intervention.'
 version: 1.0.0
+author: SamjoeYang - 上海不丁网络科技有限公司
 license: MIT
 agent_created: true
 ---

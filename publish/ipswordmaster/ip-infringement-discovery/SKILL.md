@@ -1,7 +1,12 @@
 ---
 name: ip-infringement-discovery
+display_name: 侵权线索发现
+display_name_en: IP Infringement Lead Discovery
 description: 知识产权侵权线索发现与初判。用于多渠道（电商平台、线下市场、展会、社交媒体、海关、域名）收集疑似侵权线索、锁定侵权主体及其生产/销售/进出口链条、按权利类型做初步判断并分级排序。当用户需要"找侵权线索""查谁在仿冒我""发现疑似侵权帮我评估"时使用。Also usable in English when the user mentions finding IP infringement clues, detecting counterfeits, infringement discovery, suspect monitoring.
+description_zh: 知识产权侵权线索发现与初判：多渠道（电商平台、线下市场、展会、社交媒体、海关、域名）收集疑似侵权线索，锁定侵权主体及其生产/销售/进出口链条，按权利类型做初步判断并分级排序。
+description_en: 'IP infringement lead discovery and triage: collects suspected-infringement leads across e-commerce, offline markets, trade fairs, social media, customs and domains; identifies infringers and their production/sales/import-export chains; makes a preliminary assessment by right type and prioritizes leads.'
 version: 1.0.0
+author: SamjoeYang - 上海不丁网络科技有限公司
 license: MIT
 agent_created: true
 ---

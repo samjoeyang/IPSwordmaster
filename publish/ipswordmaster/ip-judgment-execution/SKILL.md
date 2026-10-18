@@ -1,7 +1,12 @@
 ---
 name: ip-judgment-execution
+display_name: 裁判执行与监测
+display_name_en: IP Judgment Execution & Monitoring
 description: 知识产权裁判执行与复发监测：申请强制执行（金钱给付/停止侵权）、执行异议与追加被执行人、拒不执行处置（限高/失信/罚款拘留/拒不执行判决裁定罪）、维权复盘与重复侵权监测闭环。当用户需要"申请执行""判决后怎么拿到钱""对方不履行""被执行人转移财产""防止再次侵权"时使用。Also usable in English when the user mentions IP judgment enforcement, executing a ruling, contempt of court, recurring-infringement monitoring.
+description_zh: 知识产权裁判执行与复发监测：申请强制执行（金钱给付/停止侵权）、执行异议与追加被执行人、拒不执行处置（限高/失信/罚款拘留/拒执罪）、维权复盘与重复侵权监测闭环。
+description_en: 'IP judgment enforcement and recurrence monitoring: applies for compulsory execution (monetary payment / cessation of infringement), handles execution objections and adding judgment debtors, addresses non-compliance (travel restriction, dishonesty listing, fines/detention, contempt of court), and closes the loop with case review and repeat-infringement monitoring.'
 version: 1.0.0
+author: SamjoeYang - 上海不丁网络科技有限公司
 license: MIT
 agent_created: true
 ---

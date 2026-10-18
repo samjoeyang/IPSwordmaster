@@ -196,14 +196,16 @@ python3 /path/to/skill-creator-for-work/scripts/quick_validate.py skills/ip-righ
 
 ## 九、发布到技能市场（SkillHub）
 
-本技能包已打包为单一聚合技能 `ipswordmaster`，可一键发布 / 安装：
+本技能包已打包为单一聚合技能 `ipswordmaster`，可按下方指南提交到 SkillHub：
 
 - **聚合包源码**：`publish/ipswordmaster/`（入口 `SKILL.md` + 12 个子技能目录 + `assets/` 图标素材：1 张封面 + 12 个技能图标）
-- **发布产物**：`dist/ipswordmaster.zip`（经 `skill-creator` 的 `package_skill.py` 校验并打包，含全部子技能与图标）
+- **发布产物**：`dist/ipswordmaster.zip`（经 `skill-creator` 的 `package_skill.py` 校验并打包，含 13 个 SKILL.md + 13 张 PNG）
 - **安装方式**：在 WorkBuddy 中用提示词「安装 skill: ipswordmaster」，或解压到目标平台 `skills/` 目录
-- 每个子技能 frontmatter 含 `name` + `description` + `version` + `license` + `agent_created`，均通过 `quick_validate.py`
+- **字段完整性**：13 个 SKILL.md 均含 `name` / `description` / `description_zh` / `description_en` / `version` / `author` / `license` / `agent_created`（其中 3 个交付物技能另含 `display_name` / `display_name_en`，其余 9 个原技能与入口也已补齐），全部通过 `quick_validate.py`
+- **合规状态**：包内零外链、零裸域名、零作者联系方式（联系方式仅放在开发者主页，见下）
+- **提交指南**：见 [`docs/skillhub-submission-guide.md`](docs/skillhub-submission-guide.md)；开发者主页文案见 [`docs/developer-homepage-copy.md`](docs/developer-homepage-copy.md)
 
-> 提交到 SkillHub 需在 WorkBuddy 客户端「技能市场 → 发布 / 上传」或官网 portal 完成（含内容审核）。
+> 当前环境无「提交到技能市场」的 API，实际上传需在 WorkBuddy 开放平台 portal（open.workbuddy.cn）完成（含机器 + AI + 人工审核，约 7 个工作日）。本仓库已把包补到可过审的最终形态。
 
 ### 9.1 跨平台来源保留（vendor）
 

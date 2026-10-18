@@ -1,7 +1,12 @@
 ---
 name: ip-rights-audit
+display_name: 权利核查与监测
+display_name_en: IP Rights Audit & Monitoring
 description: 知识产权权利基础核查与监测体系搭建。用于维权启动前的确权核查（专利/商标/著作权/商业秘密的有效性、权属、保护范围与剩余期限）、生成权利资产清单、办理知识产权海关保护备案、搭建电商平台/线下市场/展会/社媒的侵权监测体系。当用户准备维权、被侵权、需要盘点自有知识产权资产、要求"确权""权利清单""海关备案""侵权监测"时使用。Also usable in English when the user mentions IP rights audit, IP asset inventory, customs recordal, IP monitoring.
+description_zh: 维权启动前的确权核查与监测体系搭建：核查专利/商标/著作权/商业秘密的有效性、权属、保护范围与剩余期限，生成权利资产清单，办理知识产权海关保护备案，搭建电商/线下/展会/社媒的侵权监测体系。
+description_en: 'Pre-enforcement IP rights verification and monitoring: checks validity, ownership, scope and remaining term of patents/trademarks/copyrights/trade secrets; builds an asset inventory; files customs IP recordal; and sets up infringement monitoring across e-commerce, offline, trade-fair and social channels.'
 version: 1.0.0
+author: SamjoeYang - 上海不丁网络科技有限公司
 license: MIT
 agent_created: true
 ---
