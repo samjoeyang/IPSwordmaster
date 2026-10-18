@@ -2,7 +2,7 @@
 name: legal-lingo-translator
 display_name: 法言法语翻译器
 display_name_en: Legal Lingo Translator
-description: 法言法语翻译器。把日常口语/白话转换成法庭、诉讼、法律文书语境下的正式书面语言（法言法语），也反向把法律文书、判决书、律师函、法条翻译成大白话。正向：当用户给出日常口头表达（如"他不还我钱我要告他""他把我打伤了""老板克扣我工资还开除我"），希望改写为可在庭审陈述、起诉状、答辩状、报案材料、劳动仲裁申请书或法律文书中使用的规范书面语时使用；把情绪化、主观化的口语转化为以事实、损害和请求为落点的客观法律表述。反向：当用户看不懂判决书、律师函、合同条款、起诉状、法条时使用。覆盖民事纠纷、刑事报案、劳动争议、婚姻家事等场景。Also usable in English: use when the user wants to convert casual speech into formal legal writing, or wants legal documents / judgments / demand letters / statutory provisions explained in plain language.
+description: '法言法语翻译器。把日常口语/白话转换成法庭、诉讼、法律文书语境下的正式书面语言（法言法语），也反向把法律文书、判决书、律师函、法条翻译成大白话。正向：当用户给出日常口头表达（如"他不还我钱我要告他""他把我打伤了""老板克扣我工资还开除我"），希望改写为可在庭审陈述、起诉状、答辩状、报案材料、劳动仲裁申请书或法律文书中使用的规范书面语时使用；把情绪化、主观化的口语转化为以事实、损害和请求为落点的客观法律表述。反向：当用户看不懂判决书、律师函、合同条款、起诉状、法条时使用。覆盖民事纠纷、刑事报案、劳动争议、婚姻家事等场景。Also usable in English when the user wants to convert casual speech into formal legal writing, or wants legal documents, judgments, demand letters and statutory provisions explained in plain language.'
 description_zh: 法言法语翻译器。正向把日常口语/白话改写为庭审陈述、起诉状、报案材料、劳动仲裁申请书等法律文书可用的规范书面语；反向把判决书、律师函、合同条款、法条翻译成大白话并点明实际影响与关键期限。覆盖民事纠纷、刑事报案、劳动争议、婚姻家事等场景。
 description_en: 'Legal Lingo Translator. Two-way conversion between everyday spoken Chinese and formal legal writing. Forward: rewrite casual or emotional speech into formal wording usable in courtroom statements, complaints (起诉状), police reports, labor arbitration applications and other legal documents. Reverse: explain judgments, demand letters, contract clauses, and statutory provisions in plain language, flagging practical consequences and key deadlines. Covers civil disputes, criminal reporting, labor disputes, and family/marriage matters.'
 version: 1.0.0
