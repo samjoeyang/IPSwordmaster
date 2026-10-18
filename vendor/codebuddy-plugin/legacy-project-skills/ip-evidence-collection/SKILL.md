@@ -43,4 +43,4 @@ agent_created: true
 
 ## 作者
 
-本技能由 **知产刀客SamjoeYang** 设计并维护。
+本技能由 **知产刀客 · SamjoeYang** 设计并维护。

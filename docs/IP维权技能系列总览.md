@@ -3,7 +3,7 @@
 > 安装目录：`/home/user/.doubao/agent_mode/workspace/.user_skills/`
 > 构建工具：`skill-creator-for-work`（init_skill.py 初始化 + quick_validate.py 校验）
 > 状态：12/12 技能已创建并通过官方校验
-> 作者：**知产刀客SamjoeYang**
+> 作者：**知产刀客 · SamjoeYang**
 
 ## 一、技能全景（按维权链路排序）
 
