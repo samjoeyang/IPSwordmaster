@@ -1,0 +1,57 @@
+{
+  "name": "ip-platform-complaint",
+  "version": "1.0.0",
+  "description": "IP enforcement specialist that screens infringement leads, plans evidence preservation and designs platform-specific takedown strategies",
+  "author": {
+    "name": "SamjoeYang - 上海不丁网络科技有限公司",
+    "email": "samjoeyang@qq.com"
+  },
+  "agents": ["./agents/ip-platform-complaint.md"],
+  "skills": [
+    "./skills/ip-infringement-screening",
+    "./skills/ip-evidence-collection",
+    "./skills/ip-complaint-playbook"
+  ],
+
+  "expertType": "agent",
+  "agentName": "ip-platform-complaint",
+
+  "displayName": {
+    "en": "Takedown Officer",
+    "zh": "维权下架官"
+  },
+  "profession": {
+    "en": "Platform Complaint & Takedown Specialist",
+    "zh": "平台投诉专员"
+  },
+  "displayDescription": {
+    "en": "Screens infringement leads, plans evidence preservation, and designs platform takedown strategies with rejection handling",
+    "zh": "平台投诉专员：研判侵权线索、制定固证与投诉方案，选通道定案由写对比说明，处理驳回与申诉应对"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "11-SecurityCompliance",
+  "defaultInitPrompt": {
+    "zh": "这批链接要投诉，帮我研判并出一份投诉方案",
+    "en": "Screen these links and give me a platform takedown plan"
+  },
+  "plugin": "ip-platform-complaint",
+  "tags": [
+    { "en": "Takedown Strategy", "zh": "平台投诉" },
+    { "en": "Infringement Screening", "zh": "侵权研判" },
+    { "en": "Appeal Handling", "zh": "申诉应对" }
+  ],
+  "quickPrompts": [
+    {
+      "en": "Screen these links and give me a platform takedown plan",
+      "zh": "这批链接要投诉，帮我研判并出一份投诉方案"
+    },
+    {
+      "en": "My complaint was rejected, analyze the reason and how to fix it",
+      "zh": "投诉被平台驳回了，帮我分析驳回原因和补救方案"
+    },
+    {
+      "en": "The seller appealed with an authorization letter, how should I respond",
+      "zh": "卖家提交了授权书申诉，我该怎么应对"
+    }
+  ]
+}

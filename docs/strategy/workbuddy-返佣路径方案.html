@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WorkBuddy 客户配工具 + 返佣路径方案</title>
+<style>
+  :root{
+    --bg:#f7f8fa;
+    --card:#ffffff;
+    --ink:#1a1d21;
+    --ink-2:#4a5058;
+    --ink-3:#7a828c;
+    --line:#e3e6ea;
+    --accent:#1a6fd4;
+    --accent-soft:#eaf2fd;
+    --ok:#0f7b4f;
+    --ok-soft:#e6f5ee;
+    --warn:#b45309;
+    --warn-soft:#fdf3e3;
+    --danger:#c0392b;
+    --danger-soft:#fdeceb;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:40px 20px 80px;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:860px;margin:0 auto;}
+  header{margin-bottom:32px;}
+  h1{font-size:27px;margin:0 0 8px;letter-spacing:-.4px;}
+  .sub{color:var(--ink-3);font-size:14px;}
+  section{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:24px 26px;
+    margin-bottom:18px;
+  }
+  h2{
+    font-size:17px;margin:0 0 16px;padding-bottom:12px;
+    border-bottom:1px solid var(--line);
+    display:flex;align-items:center;gap:9px;
+  }
+  .num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:23px;height:23px;border-radius:6px;
+    background:var(--accent);color:#fff;font-size:12px;font-weight:600;flex:none;
+  }
+  h3{font-size:14.5px;margin:20px 0 8px;}
+  p{margin:0 0 12px;font-size:14.5px;color:var(--ink-2);}
+  p:last-child{margin-bottom:0;}
+  strong{color:var(--ink);font-weight:600;}
+  .callout{
+    border-radius:9px;padding:14px 16px;margin:14px 0;
+    font-size:14px;line-height:1.65;
+  }
+  .callout.ok{background:var(--ok-soft);border-left:3px solid var(--ok);color:#0b5136;}
+  .callout.warn{background:var(--warn-soft);border-left:3px solid var(--warn);color:#7c4409;}
+  .callout.danger{background:var(--danger-soft);border-left:3px solid var(--danger);color:#8c2a20;}
+  .callout.info{background:var(--accent-soft);border-left:3px solid var(--accent);color:#144a8c;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0;}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{background:#f2f4f7;font-weight:600;color:var(--ink);font-size:13px;}
+  td{color:var(--ink-2);}
+  tr:last-child td{border-bottom:none;}
+  .tag{
+    display:inline-block;padding:2px 8px;border-radius:5px;
+    font-size:11.5px;font-weight:600;line-height:1.7;white-space:nowrap;
+  }
+  .tag.g{background:var(--ok-soft);color:var(--ok);}
+  .tag.y{background:var(--warn-soft);color:var(--warn);}
+  .tag.r{background:var(--danger-soft);color:var(--danger);}
+  .tag.b{background:var(--accent-soft);color:var(--accent);}
+  ol,ul{margin:0 0 0 0;padding-left:20px;font-size:14.5px;color:var(--ink-2);}
+  li{margin-bottom:9px;}
+  li:last-child{margin-bottom:0;}
+  .steps{counter-reset:s;list-style:none;padding:0;}
+  .steps li{
+    position:relative;padding-left:38px;margin-bottom:16px;
+    counter-increment:s;font-size:14.5px;color:var(--ink-2);
+  }
+  .steps li:last-child{margin-bottom:0;}
+  .steps li::before{
+    content:counter(s);
+    position:absolute;left:0;top:2px;
+    width:24px;height:24px;border-radius:50%;
+    background:var(--accent);color:#fff;
+    font-size:12px;font-weight:600;
+    display:flex;align-items:center;justify-content:center;
+  }
+  a{color:var(--accent);text-decoration:none;word-break:break-all;}
+  a:hover{text-decoration:underline;}
+  .mono{
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:12.5px;background:#f2f4f7;padding:2px 6px;border-radius:4px;
+  }
+  .kv{display:flex;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px dashed var(--line);}
+  .kv:last-child{border-bottom:none;}
+  .kv .k{color:var(--ink-3);flex:none;width:120px;}
+  .kv .v{color:var(--ink);font-weight:500;}
+  .hl{background:#fff3cd;padding:1px 4px;border-radius:3px;}
+  footer{
+    text-align:center;color:var(--ink-3);font-size:12.5px;
+    margin-top:28px;padding-top:18px;border-top:1px solid var(--line);
+  }
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+  .box{border:1px solid var(--line);border-radius:9px;padding:14px 16px;background:#fbfcfd;}
+  .box .t{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+  .box .d{font-size:13px;color:var(--ink-3);line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>WorkBuddy 给客户配工具 + 拿返佣：可行路径</h1>
+  <div class="sub">生成于 2026-10-08 · 依据腾讯云官方公开政策（CPS 推广规则 / 伙伴准入流程）</div>
+</header>
+
+<section>
+  <h2><span class="num">✓</span>结论先行</h2>
+  <p>你<strong>不需要</strong>挂靠任何代理商，也不需要交 6 万保证金。走官方的 <strong>「腾讯云 CPS 推广大使」</strong>即可 —— <strong>WorkBuddy 旗舰版 / 专享版已于 2026 年 7 月被正式纳入 CPS 返佣产品目录</strong>，这是官方唯一允许「不成为代理商、也能拿销售返佣」的合规通道。</p>
+  <div class="callout ok">
+    <strong>为什么不能挂靠代理商：</strong>《合作伙伴权利义务》明文规定，合作伙伴「不得发展下级代理商（包括但不限于二级代理、分包等任何直接或间接与代理性质相同或近似的行为）」。私下挂靠分成是代理商违约，你拿不到任何官方保障，返佣结算完全靠对方自觉。
+  </div>
+  <div class="grid2">
+    <div class="box">
+      <div class="t"> CPS 推广大使（推荐你走这条）</div>
+      <div class="d">个人实名认证即可，零保证金、零考试、零业绩考核。返佣由腾讯云财务系统直接打款。</div>
+    </div>
+    <div class="box">
+      <div class="t">正式代理（暂不建议）</div>
+      <div class="d">保证金 6 万 + 公司注册资金 100 万起 + 6 人次考试 + 先自购 10 席位。投入产出不划算。</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">1</span>四步开通流程</h2>
+  <ol class="steps">
+    <li><strong>注册腾讯云账号并完成个人实名认证</strong> —— 注意必须是<strong>个人</strong>实名，企业实名账号不能成为推广者。</li>
+    <li><strong>申请参与推广活动</strong>，入口：<a href="https://cloud.tencent.com/act/partner/cps">cloud.tencent.com/act/partner/cps</a></li>
+    <li><strong>获取专属推广链接</strong>，从 CPS 控制台复制，发给客户或投放到你的私域 / 内容渠道。</li>
+    <li><strong>客户通过你的链接注册 / 登录并在关联期内下单</strong>，返佣自动记到你名下，次月 6–15 日月结。</li>
+  </ol>
+  <div class="callout warn">
+    <strong>关键口径要先核实：</strong>CPS 返佣产品目录里的名称是「<span class="mono">腾讯云代码助手 WorkBuddy（旗舰版、专享版）</span>」。给客户下单前，务必在 CPS 控制台的返佣产品详情页确认你要卖的 SKU 在清单内，别买了不在目录里的版本（例如个人标准版 ¥58/月目前不在返佣清单）。
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">2</span>能拿多少：收益测算</h2>
+  <p>返佣 = 订单实付现金 × 返佣比例。基础 20%，叠加会员星级最高 <strong>35%</strong>；<strong>单客户单笔订单佣金封顶 ¥5,000</strong>。</p>
+  <table>
+    <thead>
+      <tr><th>客户采购</th><th>订单金额<br><span style="font-weight:400;color:#7a828c">（旗舰版 ¥2376/席/年）</span></th><th>20% 基础</th><th>35% 满星</th><th>实收</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>3 席 / 年付</td><td>¥7,128</td><td>¥1,426</td><td>¥2,495</td><td><span class="tag g">全额到手</span></td></tr>
+      <tr><td>5 席 / 年付</td><td>¥11,880</td><td>¥2,376</td><td>¥4,158</td><td><span class="tag g">全额到手</span></td></tr>
+      <tr><td>10 席 / 年付</td><td>¥23,760</td><td>¥4,752</td><td>¥8,316</td><td><span class="tag y">封顶 ¥5,000</span></td></tr>
+      <tr><td>20 席 / 年付</td><td>¥47,520</td><td>¥9,504</td><td>¥16,632</td><td><span class="tag y">封顶 ¥5,000</span></td></tr>
+      <tr><td>50 席 / 年付</td><td>¥118,800</td><td>¥23,760</td><td>¥41,580</td><td><span class="tag r">封顶 ¥5,000（损失大）</span></td></tr>
+    </tbody>
+  </table>
+  <div class="callout danger">
+    <strong>最大的坑在这里：</strong>单笔订单佣金封顶 <span class="hl">¥5,000</span>，所以<strong>单个客户超过约 10 席位之后，多卖的部分一分钱返佣都没有</strong>。<br>
+    实操对策：① 优先谈「首年 5–10 席试点」，把单卡在封顶线以内；② 多客户分散优于单客户大单；③ 下单前跟 CPS 管理员确认<strong>扩容订单是否单独计返佣</strong>（目前规则只明确「新客户首购」和「沉睡用户首笔新购」，扩容口径需单独核实）。
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">3</span>红线：这些情况一分钱拿不到</h2>
+  <table>
+    <thead><tr><th style="width:42%">情形</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>客户已被代理商或腾讯云销售服务</td><td><span class="tag r">直接出局</span> 该客户订单无法参与返佣，且<strong>不可逆</strong>。所以必须让客户「全新账号 + 你的链接」注册，别让他先去官网留资。</td></tr>
+      <tr><td>客户不是新客户</td><td>近 30 天内有产品保有或消费记录的账号不算新客，只有「沉睡用户」（近 30 天消费为 0）的首笔新购可按 20% 计。</td></tr>
+      <tr><td>超过 30 天关联有效期</td><td>客户需在关联期内下单，过期要重新建立关联。</td></tr>
+      <tr><td>你用企业账号申请</td><td><span class="tag r">资格不符</span> 推广者仅限<strong>个人实名</strong>用户；企业用户、代理商、腾讯员工及合作伙伴员工均不能参与。</td></tr>
+      <tr><td>身份互斥</td><td>个人账号一旦加入推广者，<strong>该账号不可再成为代理商账号</strong>。两条路只能选一条。</td></tr>
+      <tr><td>订单退款</td><td>已计佣金会被扣回。</td></tr>
+      <tr><td>违规推广</td><td>虚假宣传、低价售卖、链接劫持、插件强制绑定等会被冻结佣金、追回并要求退回。</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="num">4</span>结算与税务</h2>
+  <div class="kv"><div class="k">结算周期</div><div class="v">每月 6–15 日核算上月佣金，确认后 1–2 个月内打入绑定银行卡</div></div>
+  <div class="kv"><div class="k">到账方式</div><div class="v">腾讯云财务系统统一打款，不支持后台自主提现</div></div>
+  <div class="kv"><div class="k">月佣金上限</div><div class="v">国内站最高 ¥80,000 / 月</div></div>
+  <div class="kv"><div class="k">所得性质</div><div class="v">劳务报酬所得，由腾讯代扣代缴个税</div></div>
+  <div class="kv"><div class="k">增值税</div><div class="v">2026-03-01 起，不含税收入单次 ≥ ¥1,000 代扣代缴；2026–2027 优惠期实际税率 1%</div></div>
+  <div class="kv"><div class="k">异议期</div><div class="v">仅受理支付后 15 日内的佣金查询，超时不受理</div></div>
+</section>
+
+<section>
+  <h2><span class="num">5</span>给你的三条补充建议</h2>
+  <h3>① 返佣只是零钱，服务费才是大头</h3>
+  <p>单客户封顶 ¥5,000 决定了这是「顺手赚」而不是「生意」。你真正该收的是<strong>落地服务费</strong>：把知识产权维权的方法论封装成 WorkBuddy 的 Skill / 专家包（侵权监测、取证固证、投诉文书生成、案件台账管理），给客户做部署 + 培训 + 知识库搭建。这部分收入不受 5000 封顶限制，且完全合规。</p>
+
+  <h3>② 客户采购时，先确认他账号是「干净」的</h3>
+  <p>很多企业早就买过腾讯云产品、或者已被代理商服务过。在让他下单前，先确认账号状态，否则白忙一场。这也是为什么<strong>必须先拿到推广链接再让客户注册</strong>，顺序不能反。</p>
+
+  <h3>③ 别碰第三方「积分兑换码」站</h3>
+  <p>市面上有站点卖 WorkBuddy 兑换码、让你下载配置包写入第三方 API Key。这类是接第三方 API 中转站，官方积分体系查不到，对话内容和代码都会被截取，也会触发 CPS 风控。既不安全也不合规。</p>
+</section>
+
+<section>
+  <h2><span class="num">?</span>需要你确认的一件事</h2>
+  <p>CPS 推广者<strong>只接受个人实名认证</strong>。你现在是打算用个人身份收返佣，还是必须走公司账？</p>
+  <ul>
+    <li><strong>个人身份</strong> → 直接按上面四步办，今天就开通。</li>
+    <li><strong>必须走公司账</strong> → CPS 不适用，那就只有两条路：要么正式申请代理（6 万保证金），要么干脆<strong>不拿返佣、只收服务费</strong>，把 WorkBuddy 作为你服务方案里的工具推荐给客户，客户自行官网采购。第三条其实最干净，也最贴合你知识产权维权的专业定位。</li>
+  </ul>
+</section>
+
+<footer>
+  数据来源：腾讯云《CPS 推广奖励规则（国内产品返佣）》《合作伙伴权利义务》《WorkBuddy 伙伴准入流程》《CPS 推荐奖励历史返佣规则》<br>
+  政策会变动，实际执行以下单时 CPS 控制台的最新规则为准
+</footer>
+
+</div>
+</body>
+</html>

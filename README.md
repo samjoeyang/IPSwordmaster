@@ -1,9 +1,9 @@
 # 知产刀客 · 知识产权全链路维权技能包
 
-> 一套覆盖**知识产权维权全链路**的 Agent Skill 集合：从确权核查、侵权发现、侵权比对、证据固定，到平台投诉、行政保护、民事诉讼、刑事维权、判决执行，再到跨境维权。共 **10 个技能**，可被主流 AI Agent 平台作为 Skill 直接安装使用。
+> 一套覆盖**知识产权维权全链路**的 Agent Skill 集合：从确权核查、侵权发现、侵权比对、证据固定，到平台投诉、行政保护、民事诉讼、刑事维权、判决执行，再到跨境维权。共 **12 个技能**，可被主流 AI Agent 平台作为 Skill 直接安装使用。
 
 - **作者**：知产刀客SamjoeYang
-- **状态**：10/10 技能已通过官方校验（`quick_validate.py`）
+- **状态**：12/12 技能已通过官方校验（`quick_validate.py`）
 - **仓库结构**：`skills/`（技能本体）+ `docs/`（总览文档）+ 本 README（说明与安装指引）
 
 ---
@@ -27,14 +27,18 @@
 |---|---|---|---|---|
 | 1 | `ip-rights-audit` | S0 确权与监测 | 权利有效性核查、权利清单、海关备案、监测体系 | references ×2 |
 | 2 | `ip-infringement-discovery` | S1 侵权发现 | 多渠道线索收集、主体链锁定、线索分级 | references ×1 |
-| 3 | `ip-infringement-analysis` | S2 侵权比对 | 专利/商标/著作权/商业秘密比对、抗辩预判、胜诉评估 | references ×4 |
-| 4 | `ip-evidence-collection` | S3 证据固定 | 取证选型、公证/存证/保全、证据链、证据清单 | references ×1 + scripts ×1 |
-| 5 | `ip-platform-complaint` | S4 平台投诉 | 淘天/京东/拼多多/抖音通知-删除、申诉应对 | references ×1 + assets ×1 |
-| 6 | `ip-administrative-action` | S5 行政保护 | 专利行政裁决、商标/著作权查处、海关扣留 | references ×2 |
-| 7 | `ip-civil-litigation` | S6 民事诉讼 | 管辖、保全/禁令、赔偿计算、起诉 | references ×1 + scripts ×1 + assets ×1 |
-| 8 | `ip-criminal-enforcement` | S7 刑事维权 | 罪名识别、立案标准、报案/自诉、刑民衔接 | references ×1 |
-| 9 | `ip-judgment-execution` | S8 执行监测 | 执行申请、强制措施、拒不执行应对、复发监测 | references ×1 |
-| 10 | `ip-cross-border-enforcement` | 跨境贯穿 | 境外平台投诉、ITC 337、海外诉讼、出口海关、权利布局 | references ×2 |
+| 3 | `ip-infringement-screening` | S1–S2 侵权研判 | 批量线索研判：侵权类型/近似度/证据强度，输出 P0–P3 风险分级与处置建议，可回填维权台账 | references ×3 + templates ×1 |
+| 4 | `ip-infringement-analysis` | S2 侵权比对 | 专利/商标/著作权/商业秘密比对、抗辩预判、胜诉评估 | references ×4 |
+| 5 | `ip-evidence-collection` | S3 证据固定 | 取证选型、公证/存证/保全、证据链与证据目录（含可选 `evidence_inventory.py` 批量生成清单） | references ×1 + templates ×1 + scripts ×1 |
+| 6 | `ip-complaint-playbook` | S4 平台投诉方案 | 投诉通道选择、案由、材料清单、侵权对比说明、提交节奏、驳回补救与申诉应对 | references ×2 + templates ×1 |
+| 7 | `ip-platform-complaint` | S4 平台投诉执行 | 淘天/京东/拼多多/抖音通知-删除、申诉应对 | references ×1 + assets ×1 |
+| 8 | `ip-administrative-action` | S5 行政保护 | 专利行政裁决、商标/著作权查处、海关扣留 | references ×2 |
+| 9 | `ip-civil-litigation` | S6 民事诉讼 | 管辖、保全/禁令、赔偿计算、起诉 | references ×1 + scripts ×1 + assets ×1 |
+| 10 | `ip-criminal-enforcement` | S7 刑事维权 | 罪名识别、立案标准、报案/自诉、刑民衔接 | references ×1 |
+| 11 | `ip-judgment-execution` | S8 执行监测 | 执行申请、强制措施、拒不执行应对、复发监测 | references ×1 |
+| 12 | `ip-cross-border-enforcement` | 跨境贯穿 | 境外平台投诉、ITC 337、海外诉讼、出口海关、权利布局 | references ×2 |
+
+> **平台投诉专用子链路**：`ip-infringement-screening`（研判分级）→ `ip-evidence-collection`（固证）→ `ip-complaint-playbook`（投诉方案）→ `ip-platform-complaint`（执行下架）。该子链路源自 CodeBuddy 插件「维权下架官」，已融合进本包的 S1–S4 阶段，详见 [`vendor/codebuddy-plugin/`](vendor/codebuddy-plugin/)。
 
 完整功能说明见 [`docs/IP维权技能系列总览.md`](docs/IP维权技能系列总览.md)。
 
@@ -52,6 +56,23 @@ S4 路径决策（函件协商 / 平台投诉 / 展会投诉）◀── 证据�
         └──→ 跨境维权（境外平台/337/海外诉讼）──┤
                                              ▼
                                         S8 执行 → 复发监测 → 回到 S0/S1
+```
+
+**平台投诉专项子链路（S1→S4 的细化）**：
+
+```
+S1 发现线索 ──▶ S1–S2 ip-infringement-screening 研判分级(P0–P3)
+                    │ 命中 P0/P1 且未固证
+                    ▼
+              S3 ip-evidence-collection 取证固证（保留 evidence_inventory.py 批量生成清单）
+                    │ 已固证
+                    ▼
+              S4 ip-complaint-playbook 投诉方案（通道/案由/对比说明/节奏/驳回补救）
+                    │
+                    ▼
+              S4 ip-platform-complaint 执行下架 + 申诉应对
+                    │
+                    └─▶ 失败/争议升级 ─▶ S5 行政 / S6 民事 / S7 刑事
 ```
 
 ## 三、安装说明
@@ -133,12 +154,14 @@ python3 /path/to/skill-creator-for-work/scripts/quick_validate.py skills/ip-righ
 | "货物出口被海关扣了怎么办 / 亚马逊上有仿冒怎么投诉" | `ip-cross-border-enforcement` |
 | "帮我盘点下我的知识产权资产 / 要维权先确权" | `ip-rights-audit` |
 | "侵权证据怎么固定？要公证还是存证？" | `ip-evidence-collection` |
+| "这批链接要不要投诉？帮我研判分级（P0–P3）" | `ip-infringement-screening` |
+| "帮我出一份平台投诉方案（通道/案由/对比说明/提交节奏）" | `ip-complaint-playbook` |
 | "判决下来了对方不履行怎么办" | `ip-judgment-execution` |
 | "假冒伪劣够不够判刑？怎么报案？" | `ip-criminal-enforcement` |
 
 ## 五、已验证内容
 
-- 10 个 `SKILL.md` 全部通过 `quick_validate.py`（frontmatter / 命名 / 结构校验）
+- 12 个 `SKILL.md` 全部通过 `quick_validate.py`（frontmatter / 命名 / 结构校验）
 - `evidence_inventory.py`：正常生成证据清单 + 非法输入拦截
 - `damages_calculator.py`：赔偿计算正确 + 非法参数校验；惩罚性赔偿默认不主张，主张时单列"主张项（非必得）"并输出风险提示
 - `litigation-guide.md`：含惩罚性赔偿主张要点（慎用）与合理开支主张要点（律师费酌减风险、按 50%~100% 支持率测算）
@@ -175,9 +198,20 @@ python3 /path/to/skill-creator-for-work/scripts/quick_validate.py skills/ip-righ
 
 本技能包已打包为单一聚合技能 `ipswordmaster`，可一键发布 / 安装：
 
-- **聚合包源码**：`publish/ipswordmaster/`（入口 `SKILL.md` + 10 个子技能目录 + `assets/` 图标素材：1 张封面 + 10 个技能图标）
+- **聚合包源码**：`publish/ipswordmaster/`（入口 `SKILL.md` + 12 个子技能目录 + `assets/` 图标素材：1 张封面 + 12 个技能图标）
 - **发布产物**：`dist/ipswordmaster.zip`（经 `skill-creator` 的 `package_skill.py` 校验并打包，含全部子技能与图标）
 - **安装方式**：在 WorkBuddy 中用提示词「安装 skill: ipswordmaster」，或解压到目标平台 `skills/` 目录
 - 每个子技能 frontmatter 含 `name` + `description` + `version` + `license` + `agent_created`，均通过 `quick_validate.py`
 
 > 提交到 SkillHub 需在 WorkBuddy 客户端「技能市场 → 发布 / 上传」或官网 portal 完成（含内容审核）。
+
+### 9.1 跨平台来源保留（vendor）
+
+本仓库同时保留了原始交付物的 CodeBuddy 插件形态，便于在 CodeBuddy 等平台直接使用：
+
+- `vendor/codebuddy-plugin/plugin-src/`：原始 CodeBuddy 插件（含 `agents/ip-platform-complaint.md`、`avatars/expert.png`、`.codebuddy-plugin/plugin.json` 与 3 个组件技能）
+- `vendor/codebuddy-plugin/_testdata/`：测试线索与侵权链接登记台账样例
+- `vendor/codebuddy-plugin/legacy-project-skills/`：融合前本仓库 `ip-evidence-collection` 的旧版本（含 `scripts/evidence_inventory.py`），用于对照与回滚
+- `docs/strategy/`：商业化落地 / 路线图等策略文档（HTML）
+
+> WorkBuddy 用户直接安装 `skills/` 下的 12 个技能即可；CodeBuddy 用户可使用 `vendor/codebuddy-plugin/plugin-src/`。两形态内容一致，仅封装格式不同。
