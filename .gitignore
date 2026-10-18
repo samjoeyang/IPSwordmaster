@@ -11,3 +11,6 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+# 本地 Agent/项目数据（运行时状态，不纳入版本库）
+.workbuddy/
