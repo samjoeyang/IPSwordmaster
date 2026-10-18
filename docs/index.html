@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>知产刀客 · 知识产权全链路维权技能包</title>
+<style>
+  :root{
+    --bg:#f5f6fa; --card:#ffffff; --ink:#1f2430; --muted:#5b6472;
+    --brand:#1e2a52; --brand2:#2f3f7a; --accent:#c8a24a; --line:#e6e9f0;
+    --code-bg:#1e2230; --code-ink:#e6e9f2;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans SC","Segoe UI",sans-serif;
+    line-height:1.7;
+  }
+  a{color:var(--brand2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  header.hero{
+    background:linear-gradient(135deg,var(--brand),var(--brand2));
+    color:#fff; padding:54px 20px 46px; text-align:center;
+    border-bottom:4px solid var(--accent);
+  }
+  header.hero h1{margin:0 0 10px; font-size:30px; letter-spacing:.5px}
+  header.hero .sub{opacity:.92; font-size:16px; max-width:760px; margin:0 auto}
+  .badges{margin-top:18px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap}
+  .badge{
+    background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.35);
+    padding:5px 12px; border-radius:999px; font-size:13px;
+  }
+  .badge b{color:var(--accent)}
+  nav{
+    position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid var(--line);
+    display:flex; gap:14px; flex-wrap:wrap; justify-content:center; padding:10px 14px;
+    font-size:14px;
+  }
+  nav a{color:var(--muted)}
+  nav a:hover{color:var(--brand)}
+  .container{max-width:980px; margin:0 auto; padding:26px 18px 60px}
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:22px 24px; margin:18px 0; box-shadow:0 1px 3px rgba(20,30,60,.04);
+  }
+  h2{margin:0 0 14px; font-size:21px; padding-left:12px; border-left:4px solid var(--accent); color:var(--brand)}
+  h3{margin:18px 0 8px; font-size:16px; color:var(--brand2)}
+  p{margin:10px 0}
+  blockquote{
+    margin:12px 0; padding:12px 16px; background:#fbf7ec;
+    border-left:4px solid var(--accent); border-radius:8px; color:#5a4a23;
+  }
+  table{width:100%; border-collapse:collapse; margin:12px 0; font-size:14px}
+  th,td{border:1px solid var(--line); padding:9px 11px; text-align:left; vertical-align:top}
+  th{background:#f0f3fa; color:var(--brand); font-weight:600}
+  tbody tr:nth-child(even){background:#fafbfe}
+  .table-wrap{overflow-x:auto}
+  pre{
+    background:var(--code-bg); color:var(--code-ink); padding:14px 16px; border-radius:10px;
+    overflow:auto; font-size:13.5px; line-height:1.55;
+    font-family:"SF Mono",Menlo,Consolas,"Courier New",monospace;
+  }
+  code{font-family:"SF Mono",Menlo,Consolas,monospace}
+  ul{margin:10px 0; padding-left:22px}
+  li{margin:6px 0}
+  .flow{display:flex; flex-direction:column; gap:10px; align-items:center; margin:16px 0}
+  .chain{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; align-items:center}
+  .node{
+    background:#eef1fb; border:1px solid #cdd6ef; border-radius:10px;
+    padding:12px 16px; text-align:center; min-width:120px;
+  }
+  .node b{display:block; color:var(--brand); font-size:15px}
+  .node span{font-size:12.5px; color:var(--muted)}
+  .arrow{color:var(--accent); font-weight:700; font-size:18px}
+  .branch{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; width:100%}
+  .branch .node{background:#fff7e9; border-color:#ecd9a6}
+  footer{text-align:center; color:var(--muted); font-size:13px; padding:24px 16px 40px}
+  .gh{display:inline-block; margin-top:10px; background:var(--brand); color:#fff; padding:9px 18px; border-radius:8px; font-size:14px}
+  .gh:hover{background:var(--brand2); text-decoration:none}
+  .tag{display:inline-block; background:#eef1fb; color:var(--brand2); border:1px solid #cdd6ef; border-radius:6px; padding:1px 7px; font-size:12px; margin-right:4px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>知产刀客 · 知识产权全链路维权技能包</h1>
+  <p class="sub">一套覆盖 <b>知识产权维权全链路</b> 的 Agent Skill 集合：从确权核查、侵权发现、侵权比对、证据固定，到平台投诉、行政保护、民事诉讼、刑事维权、判决执行，再到跨境维权。共 <b>10 个技能</b>，可被主流 AI Agent 平台作为 Skill 直接安装使用。</p>
+  <div class="badges">
+    <span class="badge">作者 <b>知产刀客SamjoeYang</b></span>
+    <span class="badge">状态 <b>10/10 已校验</b></span>
+    <span class="badge">结构 <b>skills + docs + README</b></span>
+  </div>
+</header>
+
+<nav>
+  <a href="#overview">概览</a>
+  <a href="#skills">技能全景</a>
+  <a href="#flow">全链路衔接</a>
+  <a href="#install">安装说明</a>
+  <a href="#usage">使用示例</a>
+  <a href="#verified">已验证内容</a>
+  <a href="#compat">兼容性</a>
+  <a href="#version">版本与贡献</a>
+  <a href="#copyright">版权</a>
+</nav>
+
+<div class="container">
+
+  <section id="overview">
+    <h2>一、项目概览</h2>
+    <blockquote>本技能包提供知识产权维权的方法论与流程指引，<b>不构成正式法律意见</b>；个案请结合专业律师意见使用。</blockquote>
+    <ul>
+      <li><b>作者</b>：知产刀客SamjoeYang</li>
+      <li><b>状态</b>：10/10 技能已通过官方校验（<code>quick_validate.py</code>）</li>
+      <li><b>仓库结构</b>：<code>skills/</code>（技能本体）+ <code>docs/</code>（总览文档）+ <code>README.md</code>（说明与安装指引）</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>二、技能全景</h2>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>技能目录</th><th>覆盖阶段</th><th>功能定位</th><th>捆绑资源</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><code>ip-rights-audit</code></td><td>S0 确权与监测</td><td>权利有效性核查、权利清单、海关备案、监测体系</td><td>references ×2</td></tr>
+        <tr><td>2</td><td><code>ip-infringement-discovery</code></td><td>S1 侵权发现</td><td>多渠道线索收集、主体链锁定、线索分级</td><td>references ×1</td></tr>
+        <tr><td>3</td><td><code>ip-infringement-analysis</code></td><td>S2 侵权比对</td><td>专利/商标/著作权/商业秘密比对、抗辩预判、胜诉评估</td><td>references ×4</td></tr>
+        <tr><td>4</td><td><code>ip-evidence-collection</code></td><td>S3 证据固定</td><td>取证选型、公证/存证/保全、证据链、证据清单</td><td>references ×1 + scripts ×1</td></tr>
+        <tr><td>5</td><td><code>ip-platform-complaint</code></td><td>S4 平台投诉</td><td>淘天/京东/拼多多/抖音通知-删除、申诉应对</td><td>references ×1 + assets ×1</td></tr>
+        <tr><td>6</td><td><code>ip-administrative-action</code></td><td>S5 行政保护</td><td>专利行政裁决、商标/著作权查处、海关扣留</td><td>references ×2</td></tr>
+        <tr><td>7</td><td><code>ip-civil-litigation</code></td><td>S6 民事诉讼</td><td>管辖、保全/禁令、赔偿计算、起诉</td><td>references ×1 + scripts ×1 + assets ×1</td></tr>
+        <tr><td>8</td><td><code>ip-criminal-enforcement</code></td><td>S7 刑事维权</td><td>罪名识别、立案标准、报案/自诉、刑民衔接</td><td>references ×1</td></tr>
+        <tr><td>9</td><td><code>ip-judgment-execution</code></td><td>S8 执行监测</td><td>执行申请、强制措施、拒不执行应对、复发监测</td><td>references ×1</td></tr>
+        <tr><td>10</td><td><code>ip-cross-border-enforcement</code></td><td>跨境贯穿</td><td>境外平台投诉、ITC 337、海外诉讼、出口海关、权利布局</td><td>references ×2</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="color:var(--muted);font-size:13px">完整功能说明见 <code>docs/IP维权技能系列总览.md</code>。</p>
+  </section>
+
+  <section id="flow">
+    <h2>三、全链路衔接</h2>
+    <div class="flow">
+      <div class="chain">
+        <div class="node"><b>S0 确权监测</b><span>确权与监测</span></div>
+        <div class="arrow">→</div>
+        <div class="node"><b>S1 发现线索</b><span>侵权发现</span></div>
+        <div class="arrow">→</div>
+        <div class="node"><b>S2 侵权比对</b><span>侵权分析</span></div>
+        <div class="arrow">→</div>
+        <div class="node"><b>S3 证据固定</b><span>取证保全</span></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="chain">
+        <div class="node" style="background:#fff7e9;border-color:#ecd9a6"><b>S4 路径决策</b><span>函件协商 / 平台投诉 / 展会投诉（◀── 证据包）</span></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="branch">
+        <div class="node"><b>S5 行政保护</b><span>裁决 / 查处 / 海关</span></div>
+        <div class="node"><b>S6 民事诉讼</b><span>禁令 / 保全 / 赔偿</span></div>
+        <div class="node"><b>S7 刑事维权</b><span>报案 / 自诉</span></div>
+        <div class="node"><b>跨境维权</b><span>境外平台 / 337 / 海外诉讼</span></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="chain">
+        <div class="node"><b>S8 执行</b><span>→ 复发监测 → 回到 S0 / S1</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="install">
+    <h2>四、安装说明</h2>
+    <p>本技能包采用通用 Skill 标准结构（<code>SKILL.md</code> + <code>references/</code> + <code>scripts/</code> + <code>assets/</code>），支持主流 Agent 平台直接安装，<b>无需改造</b>。</p>
+
+    <h3>4.1 通用安装（任意平台）</h3>
+    <ol>
+      <li>克隆本仓库：
+        <pre>git clone https://github.com/samjoeyang/IPSwordmaster.git
+cd IPSwordmaster</pre>
+      </li>
+      <li>将 <code>skills/</code> 下的技能目录复制到目标平台的 skills 目录（见下表）。</li>
+    </ol>
+
+    <h3>4.2 各平台安装路径</h3>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>平台</th><th>安装目录</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td><b>Claude Code</b></td><td><code>~/.claude/skills/</code> 或项目内 <code>.claude/skills/</code></td><td>全局或个人项目级</td></tr>
+        <tr><td><b>Claude Desktop</b></td><td>技能管理目录</td><td>通过设置导入技能文件夹</td></tr>
+        <tr><td><b>OpenAI Codex CLI</b></td><td><code>~/.codex/skills/</code></td><td>同类约定格式</td></tr>
+        <tr><td><b>通用 Agent 框架</b></td><td><code>.agents/skills/</code></td><td>支持该约定的框架均可</td></tr>
+        <tr><td><b>豆包 / 本工作环境</b></td><td><code>workspace/.user_skills/</code></td><td>已内置安装</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>以 Claude Code 为例：</p>
+    <pre># 全局安装全部技能
+mkdir -p ~/.claude/skills
+cp -r skills/ip-* ~/.claude/skills/
+
+# 或仅安装需要的技能
+cp -r skills/ip-civil-litigation ~/.claude/skills/</pre>
+
+    <h3>4.3 通过提示词安装（本工作环境一键安装）</h3>
+    <p>若你正在使用 WorkBuddy（本套技能即为此环境打造），可<b>完全跳过手动复制目录</b>，直接用一句自然语言让 Agent 帮你安装：</p>
+    <blockquote>帮我安装 IP 维权技能包里的 ip-civil-litigation 技能</blockquote>
+    <blockquote>把 IPSwordmaster 仓库里所有 ip- 开头的技能都装到我的工作区</blockquote>
+    <blockquote>我要用到平台投诉和证据固定，安装 ip-platform-complaint 和 ip-evidence-collection</blockquote>
+    <p><b>工作原理</b>：提示词安装本质是调用内置的技能安装器（skill installer）。它会根据你提到的技能名或目录，自动把对应的 <code>skills/&lt;skill&gt;/</code> 复制到当前工作区的技能目录（项目级 <code>workspace/.workbuddy/skills/</code> 或用户级 <code>~/.workbuddy/skills/</code>），并校验 <code>SKILL.md</code> 结构是否完整。</p>
+    <ul>
+      <li>支持"全部安装""按名安装""按维权阶段安装"等多种表述，Agent 会自行匹配技能；</li>
+      <li>安装完成后技能立即生效，无需重启对话；</li>
+      <li>若技能已存在，安装器会提示覆盖或跳过，避免重复写入；</li>
+      <li>技能包发布到技能市场后，也可直接说"安装 skill：IPSwordmaster"从市场拉取。</li>
+    </ul>
+
+    <h3>4.4 安装后验证</h3>
+    <p>每个技能目录必须包含 <code>SKILL.md</code>（YAML frontmatter 含 <code>name</code> 与 <code>description</code>），且引用资源均使用相对路径。可用本仓库自带校验脚本验证：</p>
+    <pre>python3 /path/to/skill-creator-for-work/scripts/quick_validate.py skills/ip-rights-audit
+# 输出 "Skill is valid!" 即安装成功</pre>
+  </section>
+
+  <section id="usage">
+    <h2>五、使用示例（触发方式）</h2>
+    <p>技能通过 <code>description</code> 字段自动触发，以下为典型提问与对应技能：</p>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>用户提问</th><th>触发技能</th></tr></thead>
+      <tbody>
+        <tr><td>"帮我查一下我的专利有没有被侵权"</td><td><code>ip-infringement-discovery</code> + <code>ip-infringement-analysis</code></td></tr>
+        <tr><td>"淘宝上有人卖假货，帮我投诉下架"</td><td><code>ip-platform-complaint</code></td></tr>
+        <tr><td>"侵权人很恶劣，能告他吗？能赔多少？"</td><td><code>ip-civil-litigation</code>（<code>damages_calculator.py</code> 计算赔偿）</td></tr>
+        <tr><td>"货物出口被海关扣了怎么办 / 亚马逊上有仿冒怎么投诉"</td><td><code>ip-cross-border-enforcement</code></td></tr>
+        <tr><td>"帮我盘点下我的知识产权资产 / 要维权先确权"</td><td><code>ip-rights-audit</code></td></tr>
+        <tr><td>"侵权证据怎么固定？要公证还是存证？"</td><td><code>ip-evidence-collection</code></td></tr>
+        <tr><td>"判决下来了对方不履行怎么办"</td><td><code>ip-judgment-execution</code></td></tr>
+        <tr><td>"假冒伪劣够不够判刑？怎么报案？"</td><td><code>ip-criminal-enforcement</code></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section id="verified">
+    <h2>六、已验证内容</h2>
+    <ul>
+      <li>10 个 <code>SKILL.md</code> 全部通过 <code>quick_validate.py</code>（frontmatter / 命名 / 结构校验）；</li>
+      <li><code>evidence_inventory.py</code>：正常生成证据清单 + 非法输入拦截；</li>
+      <li><code>damages_calculator.py</code>：赔偿计算正确 + 非法参数校验；惩罚性赔偿默认不主张，主张时单列"主张项（非必得）"并输出风险提示；</li>
+      <li><code>litigation-guide.md</code>：含惩罚性赔偿主张要点（慎用）与合理开支主张要点（律师费酌减风险、按 50%~100% 支持率测算）；</li>
+      <li>法律依据均已标注来源：专利行政裁决、商标法诉前禁令/证据保全、知识产权海关保护条例、电子商务法通知-删除、平台投诉四要素等。</li>
+    </ul>
+  </section>
+
+  <section id="compat">
+    <h2>七、跨平台兼容性</h2>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>兼容性要素</th><th>状态</th></tr></thead>
+      <tbody>
+        <tr><td>frontmatter 字段</td><td>核心为 <code>name</code> + <code>description</code>（标准最小格式）；另含可选元数据 <code>version</code> + <code>license</code>，不影响最小格式兼容</td></tr>
+        <tr><td>资源引用</td><td>全部相对路径，目录迁移不断链</td></tr>
+        <tr><td>脚本依赖</td><td>仅 Python 标准库（argparse/json/sys），零第三方依赖</td></tr>
+        <tr><td>绝对路径硬编码</td><td>无</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><b>使用前注意：</b></p>
+    <ul>
+      <li><b>触发靠 description</b>：换平台后目标模型按 description 判断何时调用技能（本套已写清触发场景，可直接使用）；</li>
+      <li><b>执行能力</b>：涉浏览器取证、存证平台操作的技能，目标 Agent 需具备浏览器或对应工具能力，否则需人工配合；</li>
+      <li><b>内容时效</b>：<code>references/</code> 中的法条与司法解释需按版本更新，建议随平台迁移时核对。</li>
+    </ul>
+  </section>
+
+  <section id="version">
+    <h2>八、版本管理与贡献</h2>
+    <ul>
+      <li>本仓库采用 Git 进行版本管理，技能目录即发布单元；</li>
+      <li>变更建议：每次更新 <code>references/</code> 法律依据或脚本逻辑时，同步更新 <code>docs/IP维权技能系列总览.md</code> 的"已验证内容"章节并递增版本号；</li>
+      <li>欢迎通过 Issue / PR 反馈问题与改进建议（如平台规则更新、新司法解释）。</li>
+    </ul>
+  </section>
+
+  <section id="copyright">
+    <h2>九、版权与作者</h2>
+    <ul>
+      <li><b>作者</b>：知产刀客SamjoeYang</li>
+      <li><b>内容性质</b>：本技能包提供知识产权维权的方法论与流程指引，<b>不构成正式法律意见</b>；个案请结合专业律师意见使用。</li>
+      <li>法律依据以中国现行有效法律、行政法规、司法解释为准，使用时请核对最新版本。</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>知产刀客 · 知识产权全链路维权技能包 &nbsp;·&nbsp; 由 README 生成的 GitHub Pages 单页</p>
+    <a class="gh" href="https://github.com/samjoeyang/IPSwordmaster" target="_blank" rel="noopener">在 GitHub 查看仓库 ↗</a>
+  </footer>
+
+</div>
+</body>
+</html>
