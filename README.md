@@ -88,7 +88,31 @@ cp -r skills/ip-* ~/.claude/skills/
 cp -r skills/ip-civil-litigation ~/.claude/skills/
 ```
 
-### 3.3 安装后验证
+### 3.3 通过提示词安装（本工作环境一键安装）
+
+若你正在使用 WorkBuddy（本套技能即为此环境打造），可**完全跳过手动复制目录**，直接用一句自然语言让 Agent 帮你安装：
+
+```
+帮我安装 IP 维权技能包里的 ip-civil-litigation 技能
+```
+
+```
+把 IPSwordmaster 仓库里所有 ip- 开头的技能都装到我的工作区
+```
+
+```
+我要用到平台投诉和证据固定，安装 ip-platform-complaint 和 ip-evidence-collection
+```
+
+**工作原理**：提示词安装本质是调用内置的技能安装器（skill installer）。它会根据你提到的技能名或目录，自动把对应的 `skills/<skill>/` 复制到当前工作区的技能目录（项目级 `workspace/.workbuddy/skills/` 或用户级 `~/.workbuddy/skills/`），并校验 `SKILL.md` 结构是否完整。
+
+**要点**：
+- 支持"全部安装""按名安装""按维权阶段安装（如 S4 平台投诉相关）"等多种表述，Agent 会自行匹配技能；
+- 安装完成后技能立即生效，无需重启对话；
+- 若技能已存在，安装器会提示覆盖或跳过，避免重复写入；
+- 技能包发布到技能市场后，也可直接说"安装 skill：IPSwordmaster"从市场拉取。
+
+### 3.4 安装后验证
 
 每个技能目录必须包含 `SKILL.md`（YAML frontmatter 含 `name` 与 `description`），且引用资源均使用相对路径。可用本仓库自带校验脚本验证：
 
