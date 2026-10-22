@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /ip-contact-qr
+
+Sitemap: https://legaldata.zhenzhidaole.com/sitemap.xml
